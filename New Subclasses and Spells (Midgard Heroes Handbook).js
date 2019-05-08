@@ -15,7 +15,7 @@ Date:       2019-04-26 (sheet v12.999)
  
 var iFileName = "New Subclasses and Spells (Midgard Heroes Handbook).js";
 RequiredSheetVersion(12.999);
-SourceList.P={
+SourceList.Midgard={
 name : "Midgard Heroes Handbook",
 abbreviation : "Midgard",
 group : "Primary Sources",
