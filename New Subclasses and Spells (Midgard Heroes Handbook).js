@@ -20,7 +20,58 @@ name : "Midgard Heroes Handbook",
 abbreviation : "Midgard",
 group : "Primary Sources",
  };
- 
+
+AddSubClass("barbarian", "primal path of the ancestors", {
+regExpSearch : /^(?=.*primal ancestors)(?=.*(warrior|fighter|marauder|barbarian|viking|(norse|tribes?|clans?)(wo)?m(a|e)n)).*$/i,
+subname : "Primal Path of the Ancestors",
+	
+features : {
+"subclassfeature3" : {
+name : "Wisdom of the Ancients",
+minlevel : 3,
+description : "\n   " + " When I rage I have advantage on Wisdom saving throws against spells and other magical effects.",
+	savetxt : { text : ["adv. on Wisdom saves vs. magical effects in rage"] }
+		},
+	
+"subclassfeature6" : {
+name : "Spiritual Leader",
+minlevel : 6,
+name : "Spiritual Leader",
+minlevel : 6,
+description : "\n   " + "I can cast Calm Emotions (DC 8 + Prof. bonus + Wis mod) once without expedning a spell slot",
+spellcastingBonus : {
+	name : "Spiritual Leader",
+	spells : ["calm emotions"],
+	selection : ["calm emotions"],
+usages : 1,
+recovery : "short rest"
+			}
+		},
+	
+"subclassfeature10" : {
+name : "Wrath of the Ancients",
+minlevel : 10,
+description : desc([
+		"While raging, my melee weapon attacks deal additional psychic damage equal to Wisdom modifier (minimum of 1)."]),
+calcChanges : {
+	atkCalc : [
+	function (fields, v, output) {
+	if (classes.known.barbarian && classes.known.barbarian.level > 2 && !v.isSpell && (/^(?=.*melee)(?=.*weapon).*$/i).test(v.WeaponText)) 
+	{output.extraHit += What('Wis Mod'); };
+						},
+						],
+	}
+},
+
+"subclassfeature14" : {
+name : "Unfettered Soul",
+minlevel : 14,
+description : desc([
+		"While raging I am always under the effect of a Freedom of Movement spell",					]),
+		}
+	}
+});
+
 AddSubClass("bard", "college of entropy", {
 regExpSearch : /^(?=.*(college|bard|minstrel|troubadour|jongleur))(?=.*entropy).*$/i,
 subname : "College of Entropy",
@@ -31,7 +82,7 @@ features : {
 name : "Bonus Proficiencies",
 source : ["Midgard", 33], 
 description : desc([
-	"I gain proficiencies with the Athletics and Acrobatics skills and a gaming set of my choice", ]),
+	"I gain proficiency with Acrobatics, Athletics, and a gaming set of my choice", ]),
 skills : ["Athletics", "Acrobatics"],
 toolProfs : [["Gaming set", 1]],
 	},
@@ -42,8 +93,9 @@ source : ["Midgard", 33],
 minlevel : 3,
 action : ["reaction", ""],
 description : desc([
-	"When a creature within 60 feet of me I can see makes an ability check, attack roll, or saving throw with advantage, as a reaction I can expend one use of Bardic Inspiration.",
-	"If I do so, the creature takes a penalty to their roll equal to the number I rolled on my Bardic Inspiration die. "]),
+	"When a creature within 60 feet of me that I can see makes an ability check, attack roll, or saving throw with advantage, as a reaction I can expend one use of Bardic Inspiration.",
+	"The creature takes a penalty to their roll equal to the number I rolled on my Bardic Inspiration die.",
+	"For a number of rounds equal to the number rolled on the bardic inspiration die, I can add that same number to one ability check, Attack roll, or saving throw."]),
 			},
 			
 "subclassfeature6" : {
@@ -53,9 +105,8 @@ minlevel : 6,
 recovery : "short rest",
 usages : 1,
 description : desc([
-	"When I cast a chaos spell I can choose to cause a chaos surge",
-	"If I do so, I regain 1 use of Bardic Inspiration",
-	"I regain the use of this ability after a short or long rest."]),
+	"Whenenever I cast a spell with the chaos descriptor I cause a chaos surge, and regain 1 use of Bardic Inspiration",
+	"I can use this ability once, and regain the ability to do so after a short or long rest."]),
 	},
 	
 "subclassfeature14" : {
@@ -64,9 +115,9 @@ source : ["Midgard", 34],
 minlevel : 14,
 action : ["action", ""],
 description : desc([
-	"As an action, I can change one of my spells known into any other spell on the Bard spell list. ",
+	"As an action, I can change one of my spells known into any other spell of equal or lower level on the Bard spell list. ",
 	"At the end of my next turn my list of spells known returns to normal.",
-	"Using this ability automatically causes a chaos magic surge."])
+	"Using this ability causes a chaos magic surge."])
 		}
 	}
 });
@@ -82,7 +133,7 @@ name : "Rejuvinating Inspiration",
 source : ["Midgard", 34],
 minlevel : 3,
 description : desc([
-	"An ally that uses one of my Bardic Inspiration die gains temporary HP equal to the number rolled on the Bardic Inspiration die + my Charisma mod,"]),
+	"A creature that uses one of my Bardic Inspiration die gains temporary hit points equal to the number rolled on the Bardic Inspiration die + my Charisma modifier,"]),
 	},
 	
 "subclassfeature6" : {
@@ -91,7 +142,7 @@ source : ["Midgard", 34],
 minlevel : 6,
 description : desc([
 	"I can travel through nonmagical, difficult terrain without penalty",
-	"I have advantage on saves vs. plants that impede movement by magical influence",]),
+	"I have advantage on saves vs. plants that impede movement via magical influence.",]),
 savetxt : { adv_vs : ["magical plants that impede movement"] }
 	},
 
@@ -164,8 +215,8 @@ minlevel : 20,
 description : desc([
 	"As an action, I suffuse my being with light and for 1 minute and gain benefits:",
 	"At the start of each of my turns, I regain 10 hit points",
-	"When an undead/creature native to the Shadow Realm/creature with levels of Shadow Corrutption touches me or hits me with a melee attack within 5-ft, they take 2d8 radiant damage", 
-	"Once per turn when I hit an undead/creature native to the Shadow Realm/creature with levels of Shadow Corrutption they must make a Wis save or be incapacitated until the end of their next turn"]),	
+	"When an undead, creature native to the Shadow Realm, or creature with levels of Shadow Corrutption touches me or hits me with a melee attack within 5 feet, they take 2d8 radiant damage", 
+	"Once per turn when I hit an undead, creature native to the Shadow Realm, or creature with levels of Shadow Corrutption they must make a Wisdom save or be incapacitated until the end of their next turn"]),	
 recovery : "long rest",
 usages : 1,
 action : ["action", ""]
@@ -194,9 +245,9 @@ name : "Channel Divinity: Storm Strike",
 source : ["Midgard", 42],
 minlevel : 3,
 description : desc([
-	"As an action, I infuse a ranged or thrown weapon with lightning and make an attack",
-	"I create a line of lightning 5 ft wide, 60 ft long, that does 2d10 + level lightning damage",
-	"half on Dex save. Original target has disadvantage on save if the weapon attack hits"]),
+	"As an action, I infuse a ranged or thrown weapon with lightning and make a ranged weapon attack as normal.",
+	"I create a line of lightning 5 ft wide and 60 ft long, that does 2d10 + my level lightning damage (Dex save for half) to all creatures in the line.",
+	"The target of the weapon attack has disadvantage on save if the weapon attack hits. "]),
 	action : ["action", ""]
 		},
 	
@@ -217,15 +268,15 @@ minlevel : 7,
 description : desc([
 	"While I'm conscious, allies within range and I add my proficiency bonus to Initative rolls" ]),
 additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"],
-savetxt : { immune : ["charmed"] }
+addMod : { type : "skill", field : "Init", mod : "Prof. Bonus", text : "I can add my proficiency bonus to initiative rolls." }
+
 	},
 "subclassfeature15" : {
 name : "Strike Like Lightning",
 source : ["Midgard", 42], 
 minlevel : 15,
 description : desc([
-	"If I hit a creature that hasn't taken it's fist turn in combat, or if I was hidden from it when I attacked",
-	"That creature has disadvantage on attack rolls, ability checks, and saving throws until the start of my next turn"]),
+	"If I hit a creature that hasn't taken it's fist turn in combat, or if I was hidden from it when I attacked, that creature has disadvantage on attack rolls, ability checks, and saving throws until the start of my next turn."]),
 		},
 		
 "subclassfeature20" : {
@@ -234,11 +285,11 @@ source : ["Midgard", 42],
 minlevel : 20,
 description : desc([
 	"As an action, I can gain the following benefits for 1 hour:",
-	"- I don't have disadvantage on Stealth checks because of armor",
-	"- I have advantage on Stealth checks and initiative rolls",
+	"- I don't have disadvantage on Dexterity (Stealth) checks because of armor",
+	"- I have advantage on Dexterity (Stealth) checks and initiative rolls",
 	"- My weapon attacks deal and extra 1d10 lightning or thunder damage",
-	"- I can use an action to unleash a war cry that Frightens on failed Wis save",
-	"- The cry affects those in a 30 ft cone",
+	"- I can use an action to unleash a war cry that Frightens creatures on failed Wis save",
+	"- The cry affects those in a 30 ft. cone",
 	"- Those that succeed on the save, can not be affected for 24 hours by another"]),
 recovery : "long rest",
 usages : 1,
@@ -257,12 +308,14 @@ name : "Ranting Ruin",
 source : ["Midgard", 55],
 minlevel : 1,
 description : desc([ 
-	"I gain proficiency with either the Arcana or Survival skill",
+	"I gain proficiency with either the Arcana or Survival skill and 1 language of my choice",
 	"I also learn the Vicious Mockery cantrip" ]),
 spellcastingBonus : {
 name : "Ranting Ruin",
 spells : ["vicious mockery"],
 skillstxt : "\n\n" + toUni("Apocalypse Domain") + ": Choose Arcana or Survival."},	
+languageProfs : [1]
+
 	},
 	
 "subclassfeature2" : {
@@ -271,7 +324,7 @@ source : ["Midgard", 55],
 minlevel : 2,
 description : desc([
 	"As an action, all hostile creatures within 30 ft. that I can see must make a Wis save", 
-	"If failed, each takes 3d6 + my cleric level necrotic damage, or half as much on a success"]),
+	"If failed, each takes (3d6 + my cleric level) necrotic damage, or half as much on a success. If they have total cover, they take no damage."]),
 	action : ["action", ""]
 		},
 		
