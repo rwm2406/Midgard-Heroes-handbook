@@ -497,7 +497,6 @@ selection : ["mage hand"]
 },
 "subclassfeature1.1" : {
 name : "Bonus Proficiency",
-source : ["Midgard", 59],
 minlevel : 1,
 description : "\n   " + "I gain proficiency with heavy armor",
 armor : [false, false, true, false]
@@ -557,7 +556,6 @@ AddSubClass("cleric", "darkness domain", {
 
 "subclassfeature1" : {
 name : "Creature of Darkness",
-
 minlevel : 1,
 description : desc([
        "I gain proficiency with either the Deception or Stealth skill",
@@ -685,13 +683,11 @@ action : ["action", ""]
 AddSubClass("cleric", "hunger domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(hunger|famished|cannibal)\b).*$/i,
 subname : "Hunger Domain",
-source : ["Midgard", 60],
 spellcastingExtra : ["goodberry", "ray of sickness", "locate animals or plants", "suggestion", "hunger of hadar", "vampiric touch", "blight", "grasping vine", "cloudkill", "cone of cold"],
 features : {
 					    
 "subclassfeature1" : {
 name : "Unsated",
-source : ["Midgard", 60],
 minlevel : 1,
 description : desc([
 	"I gain proficiency with Cook's utensils.", 
@@ -896,7 +892,6 @@ features : {
 					    
 "subclassfeature1" : {
 name : "Bonus Proficiency",
-source : ["Midgard", 62],
 minlevel : 1,
 description : "\n   " + "I gain proficiency with martial weapons and heavy armor",
 armor : [false, false, true, false],
@@ -922,7 +917,6 @@ description : desc([
 
   "subclassfeature8" : {
 name : "Divine Strike",
-source : ["Midgard", 55],
 minlevel : 8,
 description : desc([
 	"Once per turn, when I hit a creature with a weapon attack, I do extra radiant damage", ]),
@@ -933,7 +927,6 @@ description : desc([
   
 "subclassfeature17" : {
 name : "Channel Divinity: Holy Denunciation",
-source : ["Midgard", 60],
 minlevel : 17,
 action : ["action", ""],
 description : desc([
@@ -985,7 +978,6 @@ recovery : "long rest",
 },
  "subclassfeature8" : {
 name : "Divine Strike",
-source : ["Midgard", 55],
 minlevel : 8,
 description : desc([
 	"Once per turn, when I hit a creature with a weapon attack, I do extra weapon damage", ]),
@@ -995,17 +987,207 @@ description : desc([
 	},
   
 "subclassfeature17" : {
-name : "Channel Divinity: Banish to the Maze",
-source : ["Midgard", 60],
-minlevel : 17,
+	name : " Channel Divinity: Banish to the Maze",
+	minlevel : 17,
+	description : "\n   " + "At 17th level I gain the Banish to the Maze ability (see notes below)",
+	toNotesPage : [{
+	name : "Channel Divinity: Banish to the Maze",
+	note : [
+	"As an action I can expend one use of Channel Divinity to force a creature to make a Wisdom Saving throw.",
+	"On a failure, the target is transported to an extra-dimensional labyrinth, similar to the maze spell, for number of rounds equal to half my cleric level, unless I end it early by using a bonus action.",
+	"I can can choose to enter the maze with the target, but doing so expends two rounds of the labyrinth's total duration for every round we are both in the maze.",
+	"While in the maze as an action, I can find the target in the maze by winning an Intelligence contest against the target. Once found, the target can evade you in the same way (by winning an Intelligence contest).",
+	"I have advantage during these Intelligence contests, and I can leave the labyrinth at any time as an action, instantly returning to my previous location.",
+	"The target that was sent to the maze can also search for the exit. On its turn, it uses its action to make a DC 20 Intelligence check; if the check succeeds, the creature escapes from the labyrinth and returns to its previous location.",
+	"The labyrinth is dimly lit with ambient light."
+	],
+	page3notes : true,
+	}],
+	
+		},
+	},
+});
+
+AddSubClass("cleric", "moon domain", {
+regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(moon|night|sleep)\b).*$/i,
+subname : "Moon Domain",
+spellcastingExtra : ["faerie fire", "witch bolt", "crown of maddness", "moonbeam", "fear", "hypnotic pattern", "compulsion", "greater invisibility", "dream", "hold monster"],
+features : {
+
+"subclassfeature1" : {
+name : "Moon's Grace",
+minlevel : 1,
+description : desc([
+       "I gain proficiency in the Stealth and Perception skills",
+       "I do not have disadvantage on Dexterity (Stealth) checks while wearing medium armor"
+        ]),  
+skills : ["Perception","Stealth"],
+  },				    
+		
+"subclassfeature2" : {
+name : "Channel Divinity: Night's Chill",
+minlevel : 2,
 action : ["action", ""],
 description : desc([
-	"As an action I can invoke my deity's authority and gain advantage on all Wisdom and Charisma checks involving justice, judgment, and the law",
-  "This ability only works if my deity is openly worshipped in the land I am in."]),
-		}
+	"As an action, I can dispell any magical light within 30 feet of myself.", 
+	"Each hostile creature within 30 feet of me takes (2d10 + my cleric level) cold damage, or half damage with a successful Constitution saving throw. A creature that has total cover from me is not affected." ]),
+        },
+        
+"subclassfeature6" : {
+	name : "Channel Divinity: Luminescent Aura",
+	minlevel : 6,
+	description : desc([ 
+		"As an action, I can emit a nimbus of dim light in a 30 foot radius around myself, for a number of rounds equal to my cleric level.", 
+		"All weapons and ammunition are treated as silvered while they're in the aura and for one round after leaving.",
+		"Hostile creatures that end their turn in the light must make a Dexterity saving throw, or be outlined by silver light, as per the faerie fire spell, until the end of their next turn." ]),
+        },
 
-	}
-});
+  "subclassfeature8" : {
+name : "Divine Strike",
+minlevel : 8,
+description : desc([
+	"Once per turn, when I hit a creature with a weapon attack, I do extra cold damage", ]),
+	additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 cold damage";}),
+	calcChanges : {
+	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 cold damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra cold damage."]}
+	},
+  
+"subclassfeature17" : {
+name : "The Moonlit Way",
+minlevel : 17,
+description : desc([
+	"Anytime the moon is visible in the sky, I can use an action to detect magical pathways and portals such as fey roads, shadow roads, gate effects, and the like within 120 feet.",
+	"By spending a minute concentrating on a portal detected with this ability, I can can sense the physical conditions around its destination."
+	]),
+		
+			},
+	},
+});	
+AddSubClass("cleric", "mountain domain", {
+regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(mountain|earth|peak)\b).*$/i,
+subname : "Mountain Domain",
+spellcastingExtra : ["feather fall", "jump", "enhance ability", "spider climb", "meld into stone", "sleet storm", "stone shape", "stoneskin", "commune with nature", "cone of cold"],
+features : {
+
+"subclassfeature1.1" : {
+name : "Bonus Proficiency",
+minlevel : 1,
+description : desc([
+       "I gain proficiency in either Athletics, Nature, or Survival.",
+
+        ]),  
+skillstxt : {
+		primary : "Choose two from History, Insight, Medicine, Persuasion, and Religion",},	
+	},
+	
+"subclassfeature1.2" : {
+name : "Tongues of the Mountains",
+minlevel : 1,
+description : desc([
+	"I learn either Dwarvish or Giant." ]),
+languageProfs : [1]
+	},
+	
+"subclassfeature2" : {
+name : "Channel Divinity",
+minlevel : 2,
+action : ["action", ""],
+description : desc([
+	"As an action, I give myself and up to 5 other creatures advantage on skill or ability checks made to made to climb, avoid falling, or avoid the prone condition. The effect lasts for 1 hour."]),
+        },
+        
+"subclassfeature6" : {
+	name : "Darkvision",
+	minlevel : 6,
+	description : desc([ 
+		"I gain darkvision out to a range of 30 feet. If I already have darkvision, I can see in magical darkness as if it were dim light up to 30 feet." ]),
+        },
+
+  "subclassfeature8" : {
+name : "Divine Strike",
+minlevel : 8,
+description : desc([
+	"Once per turn, when I hit a creature with a weapon attack, I do extra cold damage", ]),
+	additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 cold damage";}),
+	calcChanges : {
+	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 cold damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra cold damage."]}
+	},
+  
+"subclassfeature17" : {
+name : "Avalanche",
+minlevel : 17,
+description : desc([
+	"As an action, I can create an Avalanche in a 60 foot cone originiating from a point I choose within 20 feet.",
+	"Each creature in the cone takes 15d8 bludgeoning damage or half with a successful Strength saving throw)",
+	" A creature that fails the saving throw is also restrained. A restrained creature can be freed by spending an action to make a successful Strength check, either by itself or by an ally within 5 feet of it."	]),
+		},
+	},
+});	
+AddSubClass("cleric", "ocean domain", {
+regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(ocean|sea|water)\b).*$/i,
+subname : "Ocean Domain",
+spellcastingExtra : ["fog cloud", "speak with animals", "locate animals or plants", "misty step", "gaseous form", "water breathing", "conjure minor elementals", "black tentacles", "awaken", "conjure elemental"],
+features : {
+
+"subclassfeature1" : {
+name : "Envoy to the Waves",
+minlevel : 1,
+description : desc([
+       "I learn the Chill Touch cantrip and the Aquan language.",
+       "I also gain proficiency in Survival, and with tridents and nets.", ]),  
+skills : ["Survival"],
+spellcastingBonus : {
+name : "Bonus Cantrip (Chill Touch)",
+spells : ["chill touch"],
+Selection : ["chill touch"]
+	},
+},
+
+"subclassfeature1.2" : {
+name : "Tongues of the Mountains",
+minlevel : 1,
+description : desc([
+	"I learn either Dwarvish or Giant." ]),
+languageProfs : [1]
+	},
+	
+"subclassfeature2" : {
+name : "Channel Divinity",
+minlevel : 2,
+action : ["action", ""],
+description : desc([
+	"As an action, I give myself and up to 5 other creatures advantage on skill or ability checks made to made to climb, avoid falling, or avoid the prone condition. The effect lasts for 1 hour."]),
+        },
+        
+"subclassfeature6" : {
+	name : "Darkvision",
+	minlevel : 6,
+	description : desc([ 
+		"I gain darkvision out to a range of 30 feet. If I already have darkvision, I can see in magical darkness as if it were dim light up to 30 feet." ]),
+        },
+
+  "subclassfeature8" : {
+name : "Divine Strike",
+minlevel : 8,
+description : desc([
+	"Once per turn, when I hit a creature with a weapon attack, I do extra cold damage", ]),
+	additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 cold damage";}),
+	calcChanges : {
+	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 cold damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra cold damage."]}
+	},
+  
+"subclassfeature17" : {
+name : "Avalanche",
+minlevel : 17,
+description : desc([
+	"As an action, I can create an Avalanche in a 60 foot cone originiating from a point I choose within 20 feet.",
+	"Each creature in the cone takes 15d8 bludgeoning damage or half with a successful Strength saving throw)",
+	" A creature that fails the saving throw is also restrained. A restrained creature can be freed by spending an action to make a successful Strength check, either by itself or by an ally within 5 feet of it."	]),
+		},
+
+		},
+	});
+	
 SpellsList["blade of wrath"] = {
 	name : "Blade of Wrath",
 	classes : ["cleric","paladin","warlock","wizard"],
