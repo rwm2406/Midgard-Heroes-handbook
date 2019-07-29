@@ -263,7 +263,6 @@ description : desc([
 	},
 "subclassfeature7" : {
 name : "Aura of Alacrity",
-source : ["Midgard", 42],
 minlevel : 7,
 description : desc([
 	"While I'm conscious, allies within range and I add my proficiency bonus to Initative rolls" ]),
@@ -273,7 +272,6 @@ addMod : { type : "skill", field : "Init", mod : "Prof. Bonus", text : "I can ad
 	},
 "subclassfeature15" : {
 name : "Strike Like Lightning",
-source : ["Midgard", 42], 
 minlevel : 15,
 description : desc([
 	"If I hit a creature that hasn't taken it's fist turn in combat, or if I was hidden from it when I attacked, that creature has disadvantage on attack rolls, ability checks, and saving throws until the start of my next turn."]),
@@ -305,7 +303,6 @@ AddSubClass("cleric", "apocalypse domain", {
 					    
 "subclassfeature1" : { 
 name : "Ranting Ruin",
-source : ["Midgard", 55],
 minlevel : 1,
 description : desc([ 
 	"I gain proficiency with either the Arcana or Survival skill and 1 language of my choice",
@@ -320,7 +317,6 @@ languageProfs : [1]
 	
 "subclassfeature2" : {
 name : "Channel Divinity: Damnation",
-source : ["Midgard", 55],
 minlevel : 2,
 description : desc([
 	"As an action, all hostile creatures within 30 ft. that I can see must make a Wis save", 
@@ -330,18 +326,16 @@ description : desc([
 		
 "subclassfeature6" : {
 name : "Channel Divinity: Weight of Guilt",
-source : ["Midgard", 55],
 minlevel : 6,
 description : desc([ 
 	"As an action, one creature within 60 ft that I can see must make a Wis save",
 	"If failed, for 1 minute I can cast a Zone of Truth spell, affecting only them, without expending a spell slot",
-	"The target automatically fails their save for Zone of Truth"]),
+	"The target automatically fails their save for Zone of Truth."]),
 	action : ["action", ""]
 	},
 	
 "subclassfeature8" : {
 name : "Divine Strike",
-source : ["Midgard", 55],
 minlevel : 8,
 description : desc([
 	"Once per turn, when I hit a creature with a weapon attack, I do extra necrotic damage", ]),
@@ -351,7 +345,6 @@ additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14
 		
 "subclassfeature17" : {
 name : "Herald of the Apocalypse",
-source : ["Midgard", 55],
 minlevel : 17,
 description : desc([
 	"I have resistance to acid, fire, and poison damage", ]),
@@ -360,22 +353,21 @@ dmgres : ["Acid", "Fire", "Poison"],
 		}
 	}
 });
-AddSubClass("cleric", "cat domain", {
-regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(cat|animal|wild)\b).*$/i,
-subname : "Cat Domain",
-source : ["P", 62],
+AddSubClass("cleric", "beer domain", {
+regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(beer|hearth|comfort)\b).*$/i,
+subname : "Beer Domain",
 spellcastingExtra : ["comprehend languages" , "heroism", "blur", "suggestion", "aura of vitality", "hypnotic pattern", "confusion", "resilient sphere", "dream", "modify memory"],
 features : {
 
 
 "subclassfeature1" : {
 name : "Disciple of the Draught",
-source : ["Midgard", 55],
 minlevel : 1,
 description : desc([
 	"I gain proficiency with either the Insight or Medicine skill (my choice).",
 	"I learn the Message cantrip", 
 	"I also gain proficiency with Brewer's supplies. Ability checks that I make with them use double my proficiency bonus." ]),
+
 skillstxt : "\n\n" + toUni("Beer Domain") + ": Choose Insight or Medicine.",
 spellcastingBonus : {
 name : "Disciple of the Draught",
@@ -387,27 +379,26 @@ toolProfs : ["Brewer's supplies"]},
 
 "subclassfeature2" : {
 name : "Channel Divinity: Blessed Brew",
-source : ["Midgard", 55],
 minlevel : 2,
 description : desc([
 	"As an action I can turn any liquid into a number of doses of Blessed Brew equal to 1 + my Wisdom modifier.",
-	"Anyone who imbibes one dose of this brew can choose one of the following benefits for 1 hour:", 
-	"Advantage on Charisma-based skill checks, or a +1 bonus to AC, or a +1 increase to the DC of saving throws against their castings of enchantment spells.",
+	"Anyone who drinks one dose of Blessed Brew can choose one of the following benefits for 1 hour:", 
+	"- Advantage on Charisma-based skill checks",
+	"- A +1 bonus to AC", 
+	"- A +1 increase to the DC of saving throws against their castings of enchantment spells.",
 	"Creatures can only be affected by 1 dose of Blessed Brew at a time."]),
 		},
 		
 "subclassfeature6" : {
 name : "Boot and Rally",
-source : ["Midgard", 57],
 minlevel : 6,
 action : ["action"],
 description : desc([
-	"All friendly creatures within 30 ft. who are frightened, paralyzed, poisoned, or stunned gain an immediate saving throw with advantage to remove the effect.",
+	"All friendly creatures within 30 feet of me who are Frightened, Paralyzed, Poisoned, or Stunned gain an immediate saving throw with advantage to remove the effect.",
 	"Creatures that succeed on the saving throw also heal 2d6 hit points."]),			
 		},
 "subclassfeature8" : {
 name : "Divine Strike",
-source : ["Midgard", 57],
 minlevel : 8,
 description : "\n   " + "Once per turn, when I hit a creature with a weapon attack, I can do extra damage",
 additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 radiant damage"; }),
@@ -425,6 +416,7 @@ dmgres : ["Cold", "Poison", "Psychic"],
 		}
 	}
 });
+
 AddSubClass("cleric", "cat domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(cat|animal|wild)\b).*$/i,
 subname : "Cat Domain",
@@ -456,7 +448,6 @@ description : desc([
 	
 "subclassfeature6" : {
 name : "Eyes of the Cat",
-source : ["Midgard", 58],
 minlevel : 6,
 description : desc([
 	"I gain darkvision out to 60 ft.",
@@ -469,30 +460,29 @@ name : "Divine Strike",
 source : ["Midgard", 55],
 minlevel : 8,
 description : desc([
-	"Once per turn, when I hit a creature with a weapon attack, I do extra fire damage", ]),
+	"Once per turn, when I hit a creature with a weapon attack, I do extra damage", ]),
 	additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 weapon damage";}),
 	calcChanges : {atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 weapon damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra damage of the weapon's type."]}
 	},
 
 "subclassfeature17" : {
 name : "Emissary of the Cat",
-source : ["Midgard", 58],
+
 minlevel : 17,
 description : desc([
 	"At 17th level, I become a natural lycanthrope of the weretiger or werelion type, whichever is appropriate to my deity." ]),
 		}
 	}
 });
+
 AddSubClass("cleric", "clockwork domain", {
-regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(clock|machine|time)\b).*$/i,
+regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(clockwork|machine|time)\b).*$/i,
 subname : "Clockwork Domain",
-source : ["Midgard", 58],
 spellcastingExtra : ["grease", "floating disk", "heat metal", "enlarge/reduce", "conjure barrage", "haste", "fabricate", "secret chest", "animate objects", "soul forging"],
 features : {
 					    
 "subclassfeature1" : {
 name : "Acolyte of Artifice",
-source : ["Midgard", 58],
 minlevel : 1,
 description : desc([
 	"I gain proficiency in either carpenter's tools, jeweler's tools, mason's tools, smith's tools, or weaver's tools.", 
@@ -515,31 +505,28 @@ armor : [false, false, true, false]
        },
 "subclassfeature2" : {
 name : "Channel Divinity: Fade from False Eyes",
-source : ["Midgard", 59],
 minlevel : 2,
 description : desc([
 	"As an action I can become invisible to constructs",
-	"Constructs must make a Wisdom save, or lose track of me for 1 round per cleric level",
-	"This effect ends early if I attack any construct." 	]),
+	"Constructs who currently see me must make a Wisdom save, or lose track of me for 1 round per cleric level",
+	"This effect ends early if I attack or take a hostile action agaisnt any construct." 	]),
     	
     	},
 "subclassfeature6" : {
 name : "Clockwork Companion",
-source : ["Midgard", 59],
 minlevel : 6,
 description : desc([
+" I build or acquire a clockwork companion which functions in most ways as a ranger's companion.", 
 	"It adds my proficiency bonus to AC, attacks, damage, and save/skill proficiencies",
-	"Its hit point maximum equals four times my cleric level if higher than its normal HP",
-	"It takes a turn on my initiative; It takes the Dodge action unless I command it otherwise",
-	"As an action, I can have it take the Attack, Dash, Disengage, or Help action on its turn",
-	"I can still use Extra Attack while commanding it to Attack; No action to order to move" ]),
-additional : "1/4 CR up to medium sized construct",
+	"Its hit point maximum equals four times my cleric level.",
+	"It takes a turn on my initiative; It only takes the Dodge action unless I command it otherwise",
+	"As a bonus action, I can have it take the Attack, Dash, Disengage, or Help action on its turn", ]),
+additional :  "up to CR 1/4th medium sized construct, or clockwork version of Tiny or Small beast CR 1/4th or lower",
 action : ["action", " (Command)"]
 	
 	},
 "subclassfeature8" : {
 name : "Divine Strike",
-source : ["Midgard", 59],
 minlevel : 8,
 description : desc([
 	"Once per turn, when I hit a creature with a weapon attack, I do extra lightning damage", ]),
@@ -550,25 +537,27 @@ description : desc([
 	
 "subclassfeature17" : {
 name : "Metal-Graced",
-source : ["Midgard", 59],
 minlevel : 17,
 description : desc([
-"I have resistance to bludgeoning, piercing, and slashing damage from non-magical weapons",
-"I also learn how to create gearforged"  ]),
+	"I have resistance to bludgeoning, piercing, and slashing damage from non-magical weapons",
+	"I also learn how to create gearforged"  ]),
+dmgres : [["Bludgeoning", "Bludg. (nonmagical)"], ["Piercing", "Pierc. (nonmagical)"], ["Slashing", "Slash. (nonmagical)"]]
+
 		}			
 		
 	}
 });
+
 AddSubClass("cleric", "darkness domain", {
 	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(darkness|shadow|night)\b).*$/i,
 	subname : "Darkness Domain",
-	source : ["Midgard", 59],
+
 	spellcastingExtra : ["shadow armor", "sleep", "darkness", "dark path", "legion", "nondetection", "night terrors", "phantasmal killer", "dark dementing", "mislead"],
 	features : {
 
 "subclassfeature1" : {
 name : "Creature of Darkness",
-source : ["Midgard", 59],
+
 minlevel : 1,
 description : desc([
        "I gain proficiency with either the Deception or Stealth skill",
@@ -580,25 +569,23 @@ action : ["bonus action", "hide"]
 },
 "subclassfeature2" : {
 name : "Channel Divinity: Shadowsight",
-source : ["Midgard", 59],
 minlevel : 2,
 action : ["action"],
 vision : ["Darkvision", "fixed60"],
 description : desc([
-    "As an action I gain darkvision out to 60 ft. for 1 hour",
-    "If I already have darkvision, I can also see in magical darkness up to 30 ft" 
+    "As an action I gain darkvision out to 60 feet for 1 hour.",
+    "If I already have darkvision, I can also see through magical darkness as dim light up to 30 feet." 
 	]), 
 	
 },
 "subclassfeature6" : {
 name : "Shadow Meld",
-source : ["Midgard", 59],
 minlevel : 6,
 action : ["action"],
 description : desc([
   "As an action I summon a sphere of darkness with a 60-foot radius centered on me",
   "In the sphere, bright light becomes dim light, dim light becomes darkness, and darkness becomes equivalent to magical darkness",
-  "All creatures other than me that at the end of their turn must make a Con save or take 1d8 cold damage",
+  "All creatures in the sphere other than me that at the end of their turn must make a Con save or take 1d8 cold damage",
   "The sphere lasts for 1 minute or until you dismiss it as a bonus action",
   "There’s a chance that creatures from the plane of shadow might step through into the world when the effect ends", 
   "See the \"Notes\" page for the table."  ]),
@@ -607,17 +594,16 @@ description : desc([
 Shadowmeldtable : "\u25C6 Shadow Meld Table (Midgard 59) [results 01-100]" + desc([
 "d100  Effect",
 "01-74 Nothing happens.",
-"75-80 2d4 Shadows.",
-"81-84 1d4 shadow fey forest hunters**.",
-"85-89 2 shadow beasts**.",
-"90-94 2 shadow fey enchantress**.",
-"95-98 2 elder shadow drake**.",
-"99-100 young shadow dragon.",
+"75-80 2d4 shadows.",
+"81-84 1d4 shadow fey forest hunters",
+"85-89 2 shadow beasts",
+"90-94 2 shadow fey enchantress",
+"95-98 2 elder shadow drakes",
+"99-100 1 young shadow dragon",
 	]),
 	
 "subclassfeature8" : {
 name : "Divine Strike",
-source : ["Midgard", 59],
 minlevel : 8,
 description : desc([
 	"Once per turn, when I hit a creature with a weapon attack, I do extra necrotic damage", ]),
@@ -628,7 +614,6 @@ atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpel
 },
 "subclassfeature17" : {
 name : "Shadow Shield",
-source : ["Midgard", 59],
 minlevel : 17,
 description : desc([
 	"Each time I am hit by a nonmagical attack or effect that causes damage, my shadow absorbs half of the damage",
@@ -636,7 +621,9 @@ description : desc([
 		}			
 		
 	}
-});AddSubClass("cleric", "dragon domain", {
+});
+
+AddSubClass("cleric", "dragon domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(drake|dragon|magic)\b).*$/i,
 subname : "Dragon Domain",
 spellcastingExtra : ["detect magic", "thunderwave", "lair sense", "enthrall", "catch the breath", "fear", "blight", "scale rot", "claws of the earth dragon", "legend lore"],
@@ -644,11 +631,11 @@ features : {
 					    
 "subclassfeature1" : {
 name : "Bonus Proficiency",
-source : ["Midgard", 60],
 minlevel : 1,
 description : desc([
-	"I gain proficiency with the Arcana skill and I gain expertise with the Arcana skill",
+	"I gain proficiency with the Arcana skill and I double my proficiency bonus for ability checks made with the Arcana skill",
 	"I also have advantage on saves against being frightened" ]),
+
 skillstxt : "\n\n" + toUni("Dragon Domain (Bonus Proficiency)") + ": Arcana proficiency and expertise.",
 eval : "AddSkillProf('Arcana', true, true)",
 savetxt : { adv_vs : ["frightened"]}
@@ -656,24 +643,22 @@ savetxt : { adv_vs : ["frightened"]}
 },
 "subclassfeature2" : {
 name : "Channel Divinity: Charmer of Reptiles",
-source : ["Midgard", 60],
 minlevel : 2,
  action : ["action", ""],
 description : desc([
-	"As an action, all reptilian creatures within 30 ft. that can see me must make a Wis save", 
+	"As an action, all reptilian creatures within 30 feet that can see me must make a Wisdom save", 
 	"If failed, they are charmed by me for 1 minute or until they take damage." ]),
         },
 "subclassfeature6" : {
 	name : "Channel Divinity: Dragon's Resistance",
-	source : ["Midgard", 60],
 	minlevel : 6,
  	action : ["reaction", ""],
 	description : desc([ 
-		"If I fail a saving throw, I can choose to succeed instead" ]),
+		"If I fail a saving throw, I can expend a use of Channel Divinity and choose to succeed instead" ]),
 	},
 "subclassfeature8" : {
 name : "Divine Strike",
-source : ["Midgard", 55],
+
 minlevel : 8,
 description : desc([
 	"Once per turn, when I hit a creature with a weapon attack, I do extra fire damage", ]),
@@ -681,21 +666,22 @@ description : desc([
 	calcChanges : {
 	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 fire damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra fire damage."]}
 	},
+	
 "subclassfeature17" : {
 name : "Frightful Presence",
-source : ["Midgard", 60],
+
 minlevel : 17,
 description : desc([
-	"I can use an action to Frighten hostile creatures on a failed Wis save for 1 minute",
-     	"This ability affects each creature I choose in a 60 ft. cone",
-        "Frightned creatures make additional saves at end of each turn",
-	"Those that succeed on the save, can not be affected for 24 hours by another"]),
+	"I can use an action to Frighten hostile creatures in a 60 foot cone on a failed Wis save for 1 minute",
+    "Frightned creatures make can make additional saves at end of each turn",
+	"Once a creature has saved, they can not be affected again for 24 hours."]),
 recovery : "short rest",
 usages : 1,
 action : ["action", ""] 
 		}
 	}
 });
+
 AddSubClass("cleric", "hunger domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(hunger|famished|cannibal)\b).*$/i,
 subname : "Hunger Domain",
@@ -712,23 +698,19 @@ description : desc([
 	"I learn the Poison Spray cantrip",
 	"I also gain proficiency in the Survival skill."
 	]),
-	toolProfs : ["Cook's utensils"]
-},
+toolProfs : ["Cook's utensils"],
+skills : ["Survival"],
 
-"subclassfeature1.2" : {
-name : "Unsated",
-source : ["Midgard", 60],
-minlevel : 1,
-description : "\n   " + "I learn the poison spray cantrip if I didn't already know it",
 spellcastingBonus : {
 name : "Bonus Cantrip (Poison Spray)",
 spells : ["poison spray"],
 Selection : ["poison spray"]
 	},
 },
+
 "subclassfeature1.2" : {
 name : "Bonus Proficiency",
-source : ["Midgard", 60],
+
 minlevel : 1,
 description : "\n   " + "I gain proficiency with heavy armor",
 armor : [false, false, true, false]
@@ -736,17 +718,15 @@ armor : [false, false, true, false]
 
 "subclassfeature2" : {
 name : "Channel Divinity: Ferocious Feast",
-source : ["Midgard", 60],
 minlevel : 2,
 description : desc([
 	"I can use my Channel Divinity to gain a bite attack for 1 minute",
 	"The bite does 1d6+ my Str mod piercing damage",
-	"On a critical hit I also add my Wis mod to the damage." 	]),
+	"On a critical hit I also add my Wis mod to the total damage." 	]),
        	},
 
 "subclassfeature6" : {
 name : "Anthropophage",
-source : ["Midgard", 59],
 minlevel : 6,
 description : desc([
 	"As an action I can engage in a ritual of cannibalism and consume 1/2 lb of meat from a sentient humanoid's corpse",
@@ -757,7 +737,6 @@ action : ["action"]
 
 "subclassfeature8" : {
 name : "Divine Strike",
-source : ["Midgard", 59],
 minlevel : 8,
 description : desc([
 	"Once per turn, when I hit a creature with a weapon attack, I do extra necrotic damage", ]),
@@ -768,12 +747,11 @@ description : desc([
 	
 "subclassfeature17" : {
 name : "Ravening Horde",
-source : ["Midgard", 59],
 minlevel : 17,
 description : desc([
-"As an action, once per long rest, all creatures within 60 ft. of me  except those I designate must make a Charisma save",
-"If they fail they take 10d8 necrotic damage, drop what they are holding and mindlessly attack with their hands, teeth, or natural weapons, those unaffected by this ability",
-"This effect lasts for 3 + my Wis mod rounds. Creatures can also repeat the saving throw at the end of their turns, ending the effect on themselves",
+"As an action, all creatures within 60 feet of me  except those I choose must make a Charisma save",
+"If they fail, they take 10d8 necrotic damage, drop what they are holding and mindlessly attack with their hands, teeth, or natural weapons, anybody who was unaffected by this ability",
+"This effect lasts for (3 + my Wisdom modifier) rounds. Creatures repeat the saving throw at the end of their turns to end the effect on themselves",
 "This ability does not work on constructs or undead." 
 ]),
 usages : 1,
@@ -782,6 +760,134 @@ action : ["action"]
 		},
 	},
 });
+AddSubClass("cleric", "hunting domain", {
+regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(hunt|wild|hunting)\b).*$/i,
+subname : "Hunting Domain",
+spellcastingExtra : ["ensaring strike", "hunter's mark", "locate animals or plants", "pass without trace", "tiny hut", "speak with plants", "faithful hound", "grasping vine", "commune with nature", "hold monster"],
+features : {
+					    
+"subclassfeature1" : {
+name : "Forest Master",
+minlevel : 1,
+description : "\n   " + "I gain proficiency with longbows and heavy crossbows",
+skills : ["Survival","Nature"],
+weaponprofs : [false, false, ["longbow", "heavy crossbow"]],
+
+},
+"subclassfeature2" : {
+name : "Channel Divinity: Unseen",
+minlevel : 2,
+action : ["action", ""],
+description : desc([
+	"As an action I can use my channel divinity to gain advantage on Stealth ability checks to move quietly and hide. I also leave no scent.",
+	"This ability lasts for rounds equal to my cleric level + my Wisdom modifier.", ]),
+	},
+	
+"subclassfeature6" : {
+	name : "Resolute Hunter",
+	minlevel : 6,
+	description : desc([ 
+		"Use the \"Choose Feature\" button above to add a favored enemy to the third page.",
+		"I choose a Favored Enemy as if I was a ranger, and gain all the same benefits as that feature.",
+		"I gain an additional Favored Enemy at 10th level, and 16th level." ]),
+additional :  levels.map(function (n) {
+					return n < 10 ? "1 favored enemy" : (n < 16 ? 1 : 2) + " favored enemies";
+				}),
+extraname : "Favored Enemy",
+extrachoices : ["Aberrations", "Beasts", "Celestials", "Constructs", "Dragons", "Elementals", "Fey", "Fiends", "Giants", "Monstrosities", "Oozes", "Plants", "Undead", "Two Races of Humanoids"],
+extraTimes : levels.map(function (n) { return n < 10 ? 1 : n < 16 ? 1 : 2; }),
+	"aberrations" : {
+		name : "Aberrations",
+		description : "",
+		languageProfs : [1]
+				},
+	"beasts" : {
+		name : "Beasts",
+		description : "",
+		languageProfs : [1]
+				},
+	"celestials" : {
+		name : "Celestials",
+		description : "",
+		languageProfs : [1]
+				},
+	"constructs" : {
+		name : "Constructs",
+		description : "",
+		languageProfs : [1]
+				},
+	"dragons" : {
+		name : "Dragons",
+		description : "",
+		languageProfs : [1]
+				},
+	"elementals" : {
+		name : "Elementals",
+		description : "",
+		languageProfs : [1]
+				},
+	"fey" : {
+		name : "Fey",
+		description : "",
+		languageProfs : [1]
+				},
+	"fiends" : {
+		name : "Fiends",
+		description : "",
+		languageProfs : [1]
+				},
+	"giants" : {
+		name : "Giants",
+		description : "",
+		languageProfs : [1]
+				},
+	"monstrosities" : {
+		name : "Monstrosities",
+		description : "",
+		languageProfs : [1]
+				},
+	"oozes" : {
+		name : "Oozes",
+		description : "",
+		languageProfs : [1]
+				},
+	"plants" : {
+		name : "Plants",
+		description : "",
+		languageProfs : [1]
+				},
+	"undead" : {
+		name : "Undead",
+		description : "",
+		languageProfs : [1]
+				},
+	"two races of humanoids" : {
+		name : "Two Races of Humanoids",
+		description : "",
+		languageProfs : [1]
+				}
+			},
+  
+  "subclassfeature8" : {
+name : "Divine Strike",
+minlevel : 8,
+description : desc([
+	"Once per turn, when I hit a creature with a weapon attack, I do extra weapon damage", ]),
+	additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 weapon damage";}),
+	calcChanges : {
+	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 radiant damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra weapon damage."]}
+	},
+  
+"subclassfeature17" : {
+name : "Hunting Quest",
+minlevel : 17,
+description : desc([
+	"I can begin a holy quest to slay a known quarry. If it is slain within 3 months I can create the following regional effect after a week of residence in a particular location.",
+	 "Wisdom (Survival) checks made to procure food from hunting, locate fresh water, or to find campsites that are secure against predators are made with advantage within 3 miles of my home."]),
+		}
+	}
+});
+
 AddSubClass("cleric", "Justice domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(justice|law|order)\b).*$/i,
 subname : "Justice Domain",
@@ -799,16 +905,15 @@ weapons : [false, true]
 },
 "subclassfeature2" : {
 name : "Channel Divinity: No Hiding Place",
-source : ["Midgard", 62],
 minlevel : 2,
 action : ["action", ""],
 description : desc([
-	"As an action, I can learn the general direction of creature that has commited a crime", 
-	"At 7th level, I learn the distance in miles that creature is from me." ]),
+	"As an action, I can learn the general direction of creature that has commited a crime or injustice", 
+	"At 7th level, I also learn the distance in miles that creature is from me." ]),
         },
+        
 "subclassfeature6" : {
 	name : "Hand of Justice",
-	source : ["Midgard", 62],
 	minlevel : 6,
 	description : desc([ 
 		"I am immunue to the Frightened condition" ]),
@@ -832,12 +937,75 @@ source : ["Midgard", 60],
 minlevel : 17,
 action : ["action", ""],
 description : desc([
-	"As an action I can invoke my deities authority and gain advantage on Wisdom and Charisma checks involving justice, judgment, and the law",
-  "This ability only works if my deity is openly worshipped in the land I am in"]),
+	"As an action I can expend a use of Channel Divinity and invoke my deity's authority.",
+  "As long as my deity is openly worshipped in the land I am in, I gain advantage on all Wisdom and Charisma checks involving justice, judgment, and the law."]),
 		}
 	}
 });
 
+AddSubClass("cleric", "Labyrinth domain", {
+regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(maze|labyrinth|minotaur)\b).*$/i,
+subname : "Labyrinth Domain",
+spellcastingExtra : ["alarm", "expeditious retreat", "misty step", "pass without trace", "hypnotic pattern", "nondetection", "dimension door", "hallucinatory terrain", "mislead", "passwall"],
+features : {
+
+"subclassfeature1" : {
+name : "First Passage",
+minlevel : 1,
+description : desc([
+       "I gain proficiency in the Survival skill",
+       "I learn the Abyssal and Rue-Thothka languages"
+        ]),  
+skills : ["Survival","Nature"],
+ languageProfs : ["Abyssal", "Rue-Thothka"]
+   },
+   
+"subclassfeature2" : {
+name : "Channel Divinity: Wisdom of the Winding Way",
+minlevel : 2,
+action : ["action"],
+description : desc([
+    "As an action I gain advantage on Wisdom (Survival) checks for tracking for 1 hour.",
+	]), 
+},
+
+"subclassfeature6" : {
+name : "Befuddling Touch",
+minlevel : 6,
+action : ["action"],
+description : desc([
+    "As an action I can make a melee attack that causes no damage, but puts the target under the effect of the confusion spell.",
+    "This effect lasts until the start of my next turn, and each attempt expends 1 use of this ability.",
+    "This ability has no effect on minotaurs, or creatures of a CR higher than my cleric level."
+	]), 
+usages : "3 + Wisdom modifier per ",
+	usagescalc : "event.value = Math.max(3, What('Wis Mod'));",
+recovery : "long rest",
+
+},
+ "subclassfeature8" : {
+name : "Divine Strike",
+source : ["Midgard", 55],
+minlevel : 8,
+description : desc([
+	"Once per turn, when I hit a creature with a weapon attack, I do extra weapon damage", ]),
+	additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 weapon damage";}),
+	calcChanges : {
+	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 weapon damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra weapon damage."]}
+	},
+  
+"subclassfeature17" : {
+name : "Channel Divinity: Banish to the Maze",
+source : ["Midgard", 60],
+minlevel : 17,
+action : ["action", ""],
+description : desc([
+	"As an action I can invoke my deity's authority and gain advantage on all Wisdom and Charisma checks involving justice, judgment, and the law",
+  "This ability only works if my deity is openly worshipped in the land I am in."]),
+		}
+
+	}
+});
 SpellsList["blade of wrath"] = {
 	name : "Blade of Wrath",
 	classes : ["cleric","paladin","warlock","wizard"],
