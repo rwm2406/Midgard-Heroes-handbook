@@ -13,7 +13,7 @@ Code by:    rwm2406
 Date:       2019-04-26 (sheet v12.999)
  */
  
-var iFileName = "New Subclasses and Spells (Midgard Heroes Handbook).js";
+var iFileName = "Midgard Heroes Handbook.js";
 RequiredSheetVersion(12.999);
 SourceList.Midgard={
 name : "Midgard Heroes Handbook",
@@ -1136,34 +1136,27 @@ description : desc([
        "I learn the Chill Touch cantrip and the Aquan language.",
        "I also gain proficiency in Survival, and with tridents and nets.", ]),  
 skills : ["Survival"],
+weaponprofs : [false, false, ["trident", "net"]],
+languageProfs : ["Aquan"],
 spellcastingBonus : {
 name : "Bonus Cantrip (Chill Touch)",
 spells : ["chill touch"],
-Selection : ["chill touch"]
-	},
+Selection : ["chill touch"]},
 },
 
-"subclassfeature1.2" : {
-name : "Tongues of the Mountains",
-minlevel : 1,
-description : desc([
-	"I learn either Dwarvish or Giant." ]),
-languageProfs : [1]
-	},
-	
 "subclassfeature2" : {
-name : "Channel Divinity",
+name : "Channel Divinity: Sea Speaker",
 minlevel : 2,
 action : ["action", ""],
 description : desc([
-	"As an action, I give myself and up to 5 other creatures advantage on skill or ability checks made to made to climb, avoid falling, or avoid the prone condition. The effect lasts for 1 hour."]),
+	"As an action I can use my Channel Divnity and can communicate telepathically with aquatic creatures within 100 feet. This ability lasts for 1 hour."]),
         },
         
 "subclassfeature6" : {
-	name : "Darkvision",
+	name : "At Home in the Waves",
 	minlevel : 6,
 	description : desc([ 
-		"I gain darkvision out to a range of 30 feet. If I already have darkvision, I can see in magical darkness as if it were dim light up to 30 feet." ]),
+		"I have a swim speed of 30 feet and darkvision 60 feet. If I already have darkvision, its range extends by 30 feet." ]),
         },
 
   "subclassfeature8" : {
@@ -1177,21 +1170,197 @@ description : desc([
 	},
   
 "subclassfeature17" : {
-name : "Avalanche",
+name : "Scales of the Sea",
 minlevel : 17,
 description : desc([
-	"As an action, I can create an Avalanche in a 60 foot cone originiating from a point I choose within 20 feet.",
-	"Each creature in the cone takes 15d8 bludgeoning damage or half with a successful Strength saving throw)",
-	" A creature that fails the saving throw is also restrained. A restrained creature can be freed by spending an action to make a successful Strength check, either by itself or by an ally within 5 feet of it."	]),
+	"I have the ability to breathe freely underwater, and as an action, I can transform my skin into fish-like scales.",
+	"While covered in scales, have resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons, and I have advantage on Dexterity (Stealth) checks made in natural underwater environments.",
+	"The scales can be any color I choose, but they need to be kept wet; I gain one level of exhaustion at the end of each hour while transformed and they aren't thoroughly wetted with a quart or more of water at least once." ]),
 		},
 
 		},
 	});
 	
+AddSubClass("cleric", "prophecy domain", {
+regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(prophecy|oracle|future)\b).*$/i,
+subname : "Prophecy Domain",
+spellcastingExtra : ["divine favor", "hex", "mirror image", "see invisibility", "counterspell", "slow", "arcane eye", "compulsion", "contact other plane", "modify memory"],
+features : {
+
+"subclassfeature1" : {
+name : "A Path Fortold",
+minlevel : 1,
+description : desc([
+       "I gain proficiency in the History and Insight skills, and I learn one exotic language of my choice.", ]),  
+skills : ["History", "Insight"],
+languageProfs : [1]
+},
+
+"subclassfeature2" : {
+name : "Channel Divinity: One Move Ahead",
+minlevel : 2,
+action : ["action", ""],
+description : desc([
+	"As an action I can use my Channel Divinity to add 20 feet to my ovement speed for a number of rounds equal to my cleric level."]),
+        },
+        
+"subclassfeature6" : {
+name : "Channel Divinity: Future Sight",
+	minlevel : 6,
+	description : desc([ 
+		" I can use my Channel Divinity to declare an action or movement I just performed did not happen, allowing me to take a different action or make a different movement.",
+		"I can do this after the result of the activity is known, so long as it didn't result in my unconsciousness or death. Only a single action or movement can be nullified.",
+		"I gain one level of exhaustion after using this ability." ]),
+        },
+
+  "subclassfeature8" : {
+name : "Divine Strike",
+minlevel : 8,
+description : desc([
+	"Once per turn, when I hit a creature with a weapon attack, I do extra weapon damage", ]),
+	additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 weapon damage";}),
+	calcChanges : {
+	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 weapon damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra damage of the same type dealt by the weapon to the target."]}
+	},
+  
+"subclassfeature17" : {
+name : "It Was Foretold",
+minlevel : 17,
+description : desc([
+	"I have advantage on Dexterity saving throws, Wisdom (Perception) checks, and Wisdom (Insight) checks. I also have resistancee to fire, poison, and psychic damage.",
+	"With GM cooperation, I can issue a prophecy from my deity once per month. I should consult with your GM to find out what, if anything, your deity wants foretold."]),
+dmgres : ["Fire", "Poison", "Psychic"],
+		
+		},
+
+		},
+	});
+	
+AddSubClass("cleric", "speed domain", {
+regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(speed|momentum|fast)\b).*$/i,
+subname : "Speed Domain",
+spellcastingExtra : ["expeditious retreat", "feather fall", "blur", "web", "haste", "slow", "conjure minor elementals", "dimension door", "hold monster", "teleportation circle"],
+features : {
+
+"subclassfeature1" : {
+name : "Celerity in Thought and Action",
+minlevel : 1,
+description : desc([
+       "I gain proficiency in the Acrobatics and Insight skills, and my base movement speed permanently increases by 5 feet.", ]),  
+skills : ["Acrobatics", "Insight"],
+speed : { walk : {spd : "+5", enc : "+5" } },
+
+},
+
+"subclassfeature2" : {
+name : "Channel Divinity: Burst of Speed",
+minlevel : 2,
+action : ["action", "Burst of Speed"],
+description : desc([
+	"As an action I can use my Channel Divinity to grant a creature I touch +10 feet to their movement speed for a number of rounds equal to 3+ my Wisdom modifier.",
+	"They also gain the benefit of the bless spell, but only on attacks and saving throws that rely on Dexterity."]),
+        },
+        
+"subclassfeature6" : {
+name : "Quickness of the Gods",
+	minlevel : 6,
+	description : desc([ 
+		"My base movement speed increases by another 5 feet. Also, as a reaction or a bonus action, I can increase my Dexterity score by 10 until the end of the current turn.",
+		"This bonus affects saving throws and ability checks, but not attacks."]),
+speed : { walk : {spd : "+5", enc : "+5" } },
+usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+recovery : "long rest",
+      },
+
+  "subclassfeature8" : {
+name : "Divine Strike",
+minlevel : 8,
+description : desc([
+	"Once per turn, when I hit a creature with a weapon attack, I do extra weapon damage", ]),
+	additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 weapon damage";}),
+	calcChanges : {
+	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 weapon damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra damage of the same type dealt by the weapon to the target."]}
+	},
+  
+"subclassfeature17" : {
+name : "Channel Divinity: Time Stop",
+minlevel : 17,
+action : ["action"] ,
+description : desc([
+	"As an action I can use my Channel Divinity to stop time, identically to the time stop spell. I can take 3 turns in a row while the effect is triggered."]),
+recovery : "long rest",	
+usages : 1
+		},
+
+		},
+	});
+AddSubClass("cleric", "travel domain", {
+regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(travel|voyage|journey)\b).*$/i,
+subname : "Travel Domain",
+spellcastingExtra : ["comprehend languages", "longstrider", "find steed", "pass without trace", "haste", "water walk", "dimension door","freedom of movement", "shadow realm gateway", "teleportation circle"],
+features : {
+
+"subclassfeature1.1" : {
+name : "Born to the Road",
+minlevel : 1,
+description : desc([
+       "I gain proficiency in either Insight, Nature, or Survival.", ]),  
+skillstxt : "\n\n" + toUni("Travel Domain (Born to the Road)") + ": Choose one from Insight, Nature, or Survival.",
+},
+
+"subclassfeature1.2" : {
+name : "Bonus Proficiency",
+minlevel : 1,
+description : desc([
+       "I learn two common languages of my choice and gain proficiency with cartographer's tools", ]),  
+toolProfs : ["Cartographer's tools"],
+languageProfs : [2]
+},
+
+"subclassfeature2" : {
+name : "Channel Divinity: Reinvigorate",
+minlevel : 2,
+action : ["action", "Reinvigorate"],
+description : desc([
+	"As an action I can use my Channel Divinity to remove 1 level of exhaustion from myself or someone I touch."]),
+        },
+        
+"subclassfeature6" : {
+name : "Quickness of the Gods",
+	minlevel : 6,
+	description : desc([ 
+		"My base movement speed increases by another 5 feet. Also, as a reaction or a bonus action, I can increase my Dexterity score by 10 until the end of the current turn.",
+		"This bonus affects saving throws and ability checks, but not attacks."]),
+speed : { walk : {spd : "+5", enc : "+5" } },
+usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+recovery : "long rest",
+      },
+
+  "subclassfeature8" : {
+name : "Divine Strike",
+minlevel : 8,
+description : desc([
+	"Once per turn, when I hit a creature with a weapon attack, I do extra weapon damage", ]),
+	additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 weapon damage";}),
+	calcChanges : {
+	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 weapon damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra damage of the same type dealt by the weapon to the target."]}
+	},
+  
+"subclassfeature17" : {
+name : "Channel Divinity: Time Stop",
+minlevel : 17,
+action : ["action"] ,
+description : desc([
+	"As an action I can use my Channel Divinity to stop time, identically to the time stop spell. I can take 3 turns in a row while the effect is triggered."]),
+recovery : "long rest",	
+usages : 1
+		},
+
+		},
+	});
 SpellsList["blade of wrath"] = {
 	name : "Blade of Wrath",
 	classes : ["cleric","paladin","warlock","wizard"],
-	source : ["Midgard", 153],
 	level : 3,
 	school : "Evoc",
 	time : "1 bns",
@@ -1207,7 +1376,6 @@ SpellsList["blade of wrath"] = {
 SpellsList["catch the breath"] = {
 	name : "Catch the Breath",
 	classes : ["bard", "cleric", "warlock", "wizard"],
-	source : ["Midgard", 156],
 	level : 3,
 	school : "Trans",
 	time : "1 rea",
@@ -1220,7 +1388,6 @@ SpellsList["catch the breath"] = {
 SpellsList["claws of the earth dragon"] = {
 	name : "Claws of the Earth Dragon",
 	classes : ["bard", "cleric", "sorcerer", "wizard"],
-	source : ["Midgard", 158],
 	level : 5,
 	school : "Evoc",
 	time : "1 a",
@@ -1234,7 +1401,6 @@ SpellsList["claws of the earth dragon"] = {
 SpellsList["dark dementing"] = {
 	name : "Dark Dementing",
 	classes : ["sorcerer","warlock", "wizard"],
-	source : ["Midgard", 161],
 	level : 5,
   	school : "Illus",
 	time : "1 a",
@@ -1250,7 +1416,6 @@ SpellsList["dark dementing"] = {
 SpellsList["dark path"] = {
 	name : "Dark Path",
 	classes : ["sorcerer","warlock", "wizard"],
-	source : ["Midgard", 162],
 	level : 2,
 	school : "Conj",
 	time : "1 a",
@@ -1265,7 +1430,6 @@ SpellsList["dark path"] = {
 SpellsList["holy ground"] = {
 	name : "Holy Ground",
 	classes : ["cleric", "paladin"],
-	source : ["Midgard", 174],
 	level : 5,
   	school : "Evoc",
 	time : "1 a",
@@ -1280,7 +1444,6 @@ SpellsList["holy ground"] = {
 SpellsList["inspiring speech"] = {
 	name : "Inspiring Speech",
 	classes : ["bard", "cleric", "paladin"],
-	source : ["Midgard", 175],
 	level : 4,
 	school : "Ench",
 	time : "10 mins",
@@ -1293,21 +1456,21 @@ SpellsList["inspiring speech"] = {
 SpellsList["lair sense"] = {
 	name : "Lair Sense",
 	classes : ["wizard"],
-	source : ["Midgard", 178],
 	level : 2,
   	school : "Div",
 	time : "1 min",
 	range : "120 ft",
+	ritual : true, 
 	components : "V,S,M\u0192",
 	compMaterial : "treasure worth at least 500 gp,which is not consumed in casting",
 	duration : "24 hours",
 	description : "You know if any Tiny or larger creature enters an area you designate no larger than 100-ft. cube +50-ft&12 hours/SL. ; see book for more details",
 	descriptionFull : "You set up a magical boundary around your lair. The boundary can't exceed the dimensions of a 100-foot cube,but within that maximum, you can shape it as you like—to follow the walls of a building or cave, for example." + "\n   " + "While the spell lasts, you instantly become aware of any Tiny or larger creature that enters the enclosed area. You know the creature's type but nothing else about it." + "\n   " + "You are also aware when creatures leave the area." + "\n   " + "This awareness is enough to wake you from sleep, and you receive the knowledge as long as you're on the same plane of existence as your lair." + AtHigherLevels + "When you cast this spell using a spell slot of 3rd level or higher, add 50 feet to the maximum dimensions of the cube and add 12 hours to the spell's duration for each slot level above 2nd."
+	
 };
 SpellsList["legion"] = {
 	name : "Legion",
 	classes : ["sorcerer", "warlock", "wizard"],
-	source : ["Midgard", 178],
 	level : 3,
 	school : "Conj",
 	time : "1 a",
@@ -1321,7 +1484,6 @@ SpellsList["legion"] = {
 SpellsList["night terrors"] = {
 	name : "Night Terrors",
 	classes : ["sorcerer", "warlock", "wizard"],
-	source : ["Midgard", 184],
 	level : 1,
 	school : "Illus",
 	time : "1 a",
@@ -1336,7 +1498,6 @@ SpellsList["night terrors"] = {
 SpellsList["scale rot"] = {
 	name : "Scale Rot",
 	classes : ["bard", "cleric", "ranger", "sorcerer", "warlock", "wizard"],
-	source : ["Midgard", 189],
 	level : 4,
   	school : "Necro",
 	time : "1 a",
@@ -1351,7 +1512,6 @@ SpellsList["scale rot"] = {
 SpellsList["shadow armor"] = {
 	name : "Shadow Armor",
 	classes : ["sorcerer", "warlock", "wizard"],
-	source : ["Midgard", 190],
 	level : 1,
 	school : "Abjur",
 	time : "1 rea",
@@ -1359,6 +1519,20 @@ SpellsList["shadow armor"] = {
 	components : "V,S",
 	duration : "Instantaneous",
 	description : "As a reaction to being attacked you impose disadvantage on the attack and gain resistance to radiant damage",
-	descriptionFull : "You siphon energy from the Shadow Realm to protectyourself from an immediate threat. As a reaction, you pull shadows around yourself to distort reality." + "\n   " + "The attack against you is made with disadvantage, and you have resistance to radiant damage until the start of your next turn." 
+	descriptionFull : "You siphon energy from the Shadow Realm to protect yourself from an immediate threat. As a reaction, you pull shadows around yourself to distort reality." + "\n   " + "The attack against you is made with disadvantage, and you have resistance to radiant damage until the start of your next turn." 
 };
+SpellsList["shadow realm gateway"] = {
+	name : "Shadow Realm Gateway",
+	classes : ["sorcerer", "warlock", "wizard"],
+	level : 5,
+	school : "Conj",
+	time : "1 min",
+	range : "30 ft",
+	components : "V,S,M",
+	compMaterial : "a piece of black chalk",
+	duration : "Conc, 1 min",
+	description : "You open a stable two-way portal to the Shadow Realm;lasts for 1 minute;only cast as a ritual",
+	descriptionFull : "By drawing a circle of black chalk up to 15 feet in diameter and chanting for one minute, you open a portal directly into the Shadow Realm." + "\n   " + "The portal fills the chalk circle and appears as a vortex of inky blackness; nothing can be seen through it. Any object or creature that passes through the portal instantly arrives safely in the Shadow Realm." + "\n   " + "The portal remains open for one minute or until you lose concentration on it, and it can be used to travel between the Shadow Realm and the chalk circle, in both directions, as many times as desired during the spell's duration. This spell can only be cast as a ritual.", 
+	ritual : true, 
 
+};
