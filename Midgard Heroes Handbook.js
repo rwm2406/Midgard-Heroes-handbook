@@ -1313,7 +1313,7 @@ description : desc([
 	"Once per turn, when I hit a creature with a weapon attack, I do extra lightning damage", ]),
 	additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 lightning damage";}),
 	calcChanges : {
-	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 weapon damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra lightning damage."]}
+	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 lightning damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra lightning damage."]}
 	},
   
 "subclassfeature17" : {
@@ -1353,41 +1353,94 @@ toolProfs : ["Navigator's tools"],
 },
 
 "subclassfeature2" : {
-name : "Channel Divinity: Reinvigorate",
+name : "Channel Divinity: Hidden Knowledge",
 minlevel : 2,
-action : ["action", "Reinvigorate"],
+action : ["action", "Hidden Knowledge"],
 description : desc([
-	"As an action I can use my Channel Divinity to remove 1 level of exhaustion from myself or someone I touch."]),
+	"As an action I can use my Channel Divinity to gain advantage on Intelligence skill checks. In addition, I can choose to use my Wisdom modifier instead of Intelligence when making these checks. Both effects last for one hour."]),
         },
         
 "subclassfeature6" : {
-name : "Trailblazer",
+name : "Channel Divinity: Dark Secrets",
+minlevel : 2,
+action : ["action", "Dark Secrets"],
 	minlevel : 6,
 	description : desc([ 
-		"When traveling any distance longer than 5 days, if I have a map of the region, or know the area well, I can reduce the travel time by 30%"]),
+		"As an action I can present my holy symbol and speak of the void. Up to three creatures I choose who can see and hear me must make successful Wisdom saving throws or be afflicted with temporary madness (selected randomly from the Short-Term Madness table). An affected creature repeats the saving throw at the end of its turn, ending the effect on itself with a successful save."]),
       },
 
   "subclassfeature8" : {
 name : "Divine Strike",
 minlevel : 8,
 description : desc([
-	"Once per turn, when I hit a creature with a weapon attack, I do extra lightning damage", ]),
-	additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 lightning damage";}),
+	"Once per turn, when I hit a creature with a weapon attack, I do extra cold damage", ]),
+	additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 cold damage";}),
 	calcChanges : {
-	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 weapon damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra lightning damage."]}
+	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 cold damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra cold damage."]}
 	},
   
 "subclassfeature17" : {
-name : "World Traveler",
+name : "Black Star",
 minlevel : 17,
+action : ["action", "Black Star"],
 description : desc([
-	"I ignore all difficult terrain, and have resistance to cold and fire damage."]),
-dmgres : ["Cold", "Fire"],	
-
+	"As an action I can create 60-foot radius circle of crushing gravity centered on myself. The area becomes difficult terrain for the duration. Creatures that start their turn in the area or that enter it during their turn must make a Strength saving throw or take 7d6 bludgeoning damage and be slowed (as the spell) until the start of their next turn. Myself and up to three creatures I select are immune to the effect, which lasts for three rounds. All of the effects end immediately if I move."]),
+usages : 1,
+recovery : "long rest"
 		},
 
 		},
 	});
+AddSubClass("druid", "circle of the stones", {
+regExpSearch : /^(?=.*(druid|shaman))(?=.*stones).*$/i,
+subname : "Circle of the Stones",
+
+features : {
+
+"subclassfeature2" : {
+name : "Spirit Guide",
+source : ["X", 23],
+minlevel : 2,
+	description : desc([
+		"I can cast Find Familiar as a ritual",
+		"In additon to the normal benefits of a familiar, my Spirit Guide can concentrate on a spell for me. However, even with it summoned, I can only have 1 concentration spell active.",
+		"If it is concentrating on a spell, my Spirit Guide makes concentration checks when it takes damage, not when I take damage." ]),
+		
+		},
+
+"subclassfeature6" : {
+name : "Spirit Dance",
+		description : desc([
+		"As a bonus action I can engage in a dance to channel the power of the spirit world. If I cast a druid spell my your next turn, one target of the spell has disadvantage on its first saving throw against the spell." ]),
+action : ["bonus action"],
+usages : 1,
+recovery : "short rest"
+		},
+		
+"subclassfeature10" : {
+name : "Savior Spirits",
+minlevel : 10,
+		description : "\n   " + "Once when I am reduced to 0 hit points but not killed outright, I drop to 1 hit point instead.",
+usages : 1,
+recovery : "short rest"
+		},
+
+"subclassfeature14" : {
+name : "Spirit Walk",
+minlevel : 14,
+		description : desc([
+		"As an action I can dissolve my flesh into ectoplasm for up to one minute and gain the following benefits for the duration.",
+"• I have a flying speed equal to my base walking speed.",
+"• I am resistant to acid, cold, fire, lightning, thunder, and nonmagical bludgeoning, piercing and slashing damage.",
+"• I can’t be grappled, petrified, prone, or restrained.",
+"• I can move through creatures and solid objects as if they were difficult terrain, but take 1d10 force damage if I end my turn inside an object.",
+"Maintaining this ability requires concenctration the same as if it were a spell."]),
+action : ["action"],
+usages : 1,
+recovery : "short rest"
+		}
+	}
+});
 SpellsList["blade of wrath"] = {
 	name : "Blade of Wrath",
 	classes : ["cleric","paladin","warlock","wizard"],
