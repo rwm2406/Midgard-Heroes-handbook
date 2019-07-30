@@ -75,12 +75,10 @@ description : desc([
 AddSubClass("bard", "college of entropy", {
 regExpSearch : /^(?=.*(college|bard|minstrel|troubadour|jongleur))(?=.*entropy).*$/i,
 subname : "College of Entropy",
-source : ["Midgard", 33],
 features : {
 		
 "subclassfeature3" : {
 name : "Bonus Proficiencies",
-source : ["Midgard", 33], 
 description : desc([
 	"I gain proficiency with Acrobatics, Athletics, and a gaming set of my choice", ]),
 skills : ["Athletics", "Acrobatics"],
@@ -89,7 +87,6 @@ toolProfs : [["Gaming set", 1]],
 
 "subclassfeature3.1" : {
 name : "Luck Stealer",
-source : ["Midgard", 33],
 minlevel : 3,
 action : ["reaction", ""],
 description : desc([
@@ -100,7 +97,6 @@ description : desc([
 			
 "subclassfeature6" : {
 name : "Infusion of Fortune",
-source : ["Midgard", 33],
 minlevel : 6,
 recovery : "short rest",
 usages : 1,
@@ -111,7 +107,6 @@ description : desc([
 	
 "subclassfeature14" : {
 name : "Belief is a Tool",
-source : ["Midgard", 34],
 minlevel : 14,
 action : ["action", ""],
 description : desc([
@@ -124,13 +119,11 @@ description : desc([
 AddSubClass("bard", "greenleaf college", {
 regExpSearch : /^(?=.*(college|bard|minstrel|troubadour|jongleur))(?=.*greenleaf).*$/i,
 subname : "Greenleaf College",
-source : ["Midgard", 34],
 spellcastingExtra : ["entangle", "goodberry", "pass without trace", "spike growth", "conjure animals", "daylight", "conjure woodland beings", "dominate beast", "commune with nature", "tree stride"],
 	features : {
     
 "subclassfeature3" : {
 name : "Rejuvinating Inspiration",
-source : ["Midgard", 34],
 minlevel : 3,
 description : desc([
 	"A creature that uses one of my Bardic Inspiration die gains temporary hit points equal to the number rolled on the Bardic Inspiration die + my Charisma modifier,"]),
@@ -138,7 +131,6 @@ description : desc([
 	
 "subclassfeature6" : {
 name : "Land's Stride",
-source : ["Midgard", 34],
 minlevel : 6,
 description : desc([
 	"I can travel through nonmagical, difficult terrain without penalty",
@@ -148,7 +140,6 @@ savetxt : { adv_vs : ["magical plants that impede movement"] }
 
 "subclassfeature14" : {
 name : "Surge of Vitality",
-source : ["Midgard", 35],
 minlevel : 14,
 action : ["action", ""],
 description : desc([
@@ -160,13 +151,11 @@ description : desc([
 AddSubClass("paladin", "oath of radiance", {
 regExpSearch : /^((?=.*(oath|radiance))|((?=.*(light|power|cleanse))(((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper))))))).*$/i,
 subname : "Oath of Radiance",
-source : ["Midgard", 40],
 spellcastingExtra : ["guiding bolt", "protection from evil and good", "magic weapon", "scorching ray", "beacon of hope", "daylight", "aura of life", "fire shield", "banishing smite", "greater restoration"],
 features : {
 		
 "subclassfeature3" : {
 name : "Channel Divinity: Dawn's Radiance",
-source : ["Midgard", 40],
 minlevel : 3,
 description : desc([
 	"As an action,  I present my holy symbol or weapon",
@@ -178,7 +167,6 @@ action : ["action", ""],
 
 "subclassfeature3.1" : {
 name : "Channel Divinity: Turn the Corrupted",
-source : ["Midgard", 41], 
 minlevel : 3,
 action : ["action"],
 description : desc([
@@ -190,7 +178,6 @@ description : desc([
 	
 "subclassfeature7" : {
 name : "Aura of Resolve",
-source : ["Midgard", 41], 
 minlevel : 7,
 description : "\n   " + "While I'm conscious, allies within range and I have advantage on saves vs. spells cast by undead/creatures native to Shadow Realm/creatures with levels of Shadow Corruption",
 additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"],
@@ -199,7 +186,6 @@ savetxt : { immune : ["charmed"] }
 
 "subclassfeature15" : {
 name : "Soul of Light",
-source : ["Midgard", 41], 
 minlevel : 15,
 description : desc([
 	"I can't gain levels of Shadow Corruption",
@@ -210,7 +196,6 @@ dmgres : ["Necrotic"],
 
 "subclassfeature20" : {
 name : "Radiant Champion",
-source : ["Midgard", 41],
 minlevel : 20,
 description : desc([
 	"As an action, I suffuse my being with light and for 1 minute and gain benefits:",
@@ -226,13 +211,11 @@ action : ["action", ""]
 AddSubClass("paladin", "oath of thunder", {
 regExpSearch : /^((?=.*(thor|perun))|((?=.*(storm|thunder|stealth))(((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper))))))).*$/i,
 subname : "Oath of Thunder",
-source : ["Midgard", 41],
 spellcastingExtra : ["heroism", "thunderwave", "find steed", "gust of wind", "call lightning", "elemental weapon", "freedom of movement", "stoneskin", "conjure volley", "swift quiver"],
 features : {
 		
 "subclassfeature3" : {
 name : "Bonus Proficiency",
-source : ["Midgard", 42],
 minlevel : 3,
 description : desc([
 	"I gain proficiency with the Stealth skill" ]),
@@ -242,7 +225,6 @@ skillstxt : "\n\n" + toUni("Paladin (Oath of Thunder)") + ": Stealth."
       
 "subclassfeature3.1" : {
 name : "Channel Divinity: Storm Strike",
-source : ["Midgard", 42],
 minlevel : 3,
 description : desc([
 	"As an action, I infuse a ranged or thrown weapon with lightning and make a ranged weapon attack as normal.",
@@ -253,7 +235,6 @@ description : desc([
 	
 "subclassfeature3" : {
 name : "Channel Divinity: Turn the Unclean",
-source : ["Midgard", 42],
 minlevel : 3,
 description : desc([
 	"As an action, all abberations/fiends within 30 ft that can see or hear me must make a Wis save",
@@ -279,7 +260,6 @@ description : desc([
 		
 "subclassfeature20" : {
 name : "Child of the Storm",
-source : ["Midgard", 42],
 minlevel : 20,
 description : desc([
 	"As an action, I can gain the following benefits for 1 hour:",
@@ -407,7 +387,6 @@ additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14
 		
 "subclassfeature17" : {
 name : "Fire in the Belly",
-source : ["Midgard", 57],
 minlevel : 17,
 description : desc([
 	"I have resistance to cold, poision, and psychic damage" ]),
@@ -420,13 +399,11 @@ dmgres : ["Cold", "Poison", "Psychic"],
 AddSubClass("cleric", "cat domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(cat|animal|wild)\b).*$/i,
 subname : "Cat Domain",
-source : ["P", 62],
 spellcastingExtra : ["find familiar", "speak with animals", "beast sense", "pass without trace", "bestow curse", "nondetection", "dimension door", "locate creature", "commune with nature", "mislead"],
 features : {
 	
 "subclassfeature1" : {
 name : "A Claw in the Clowder",
-source : ["Midgard", 58],
 minlevel : 1,
 description : desc([
 	"I gain proficiency in Acrobatics and Stealth",
@@ -440,7 +417,6 @@ skills : ["Stealth", "Acrobatics"]
 	},		
 "subclassfeature2" : {
 name : "Channel Divinity: Feline Finesse",
-source : ["Midgard", 58],
 minlevel : 2,
 description : desc([
 	"I can add a +10 bonus to any Dexterity ability or skill check made by me or someone I choose within 30 ft."	]),
@@ -457,7 +433,6 @@ vision : [["Darkvision", "fixed60"], ["Darkvision", "+30"]]
 
 "subclassfeature8" : {
 name : "Divine Strike",
-source : ["Midgard", 55],
 minlevel : 8,
 description : desc([
 	"Once per turn, when I hit a creature with a weapon attack, I do extra damage", ]),
@@ -548,11 +523,10 @@ dmgres : [["Bludgeoning", "Bludg. (nonmagical)"], ["Piercing", "Pierc. (nonmagic
 });
 
 AddSubClass("cleric", "darkness domain", {
-	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(darkness|shadow|night)\b).*$/i,
-	subname : "Darkness Domain",
-
-	spellcastingExtra : ["shadow armor", "sleep", "darkness", "dark path", "legion", "nondetection", "night terrors", "phantasmal killer", "dark dementing", "mislead"],
-	features : {
+regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(darkness|shadow|night)\b).*$/i,
+subname : "Darkness Domain",
+spellcastingExtra : ["shadow armor", "sleep", "darkness", "dark path", "legion", "nondetection", "night terrors", "phantasmal killer", "dark dementing", "mislead"],
+features : {
 
 "subclassfeature1" : {
 name : "Creature of Darkness",
