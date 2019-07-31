@@ -38,14 +38,14 @@ name : "Spiritual Leader",
 minlevel : 6,
 name : "Spiritual Leader",
 minlevel : 6,
+action : ["action", ""],
+usages : 1,
+recovery : "short rest",
 description : "\n   " + "I can cast Calm Emotions (DC 8 + Prof. bonus + Wis mod) once without expedning a spell slot",
 spellcastingBonus : {
 	name : "Spiritual Leader",
 	spells : ["calm emotions"],
 	selection : ["calm emotions"],
-action : ["action"],
-usages : 1,
-recovery : "short rest"
 			}
 		},
 	
@@ -101,7 +101,7 @@ minlevel : 6,
 recovery : "short rest",
 usages : 1,
 description : desc([
-	"Whenenever I cast a spell with the chaos descriptor I cause a chaos surge, and regain 1 use of Bardic Inspiration."]),
+	"When I cast a spell with the chaos descriptor I can choose to cause a chaos surge, and regain 1 use of Bardic Inspiration."]),
 	},
 	
 "subclassfeature14" : {
@@ -136,7 +136,7 @@ savetxt : { adv_vs : ["magical plants that impede movement"] }
 	},
 
 "subclassfeature14" : {
-name : "Surge of Vitality",
+name : "Vital Surge",
 minlevel : 14,
 action : ["action", ""],
 description : desc([
