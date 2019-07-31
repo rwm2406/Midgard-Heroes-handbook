@@ -198,9 +198,10 @@ description : desc([
 		}
 	}	
 });
-AddSubClass("paladin", "oath of thunder", {
-	regExpSearch : /^(?=.*(thunder|lightning|thor))(((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper))))).*$/i,
+AddSubClass("Paladin", "oath of thunder", {
+	regExpSearch : /(oath of thunder)/i,
 	subname : "Oath of Thunder",
+	fullname : "Oath of Thunder",
 	features : {
 		
 "subclassfeature3" : {
