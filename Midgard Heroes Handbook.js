@@ -21,11 +21,13 @@ abbreviation : "Midgard",
 group : "Primary Sources",
  };
 
-AddSubClass("barbarian", "primal path of the ancestors", {
-regExpSearch : /^(?=.*(warrior|fighter|marauder|barbarian|viking))(?=.*primal ancestors).*$/i,
-subname : "Primal Path of the Ancestors",
+AddSubClass("barbarian", "Primal Ancestors", {
+	regExpSearch : /^(?=.*primal ancestors)(?=.*(warrior|fighter|marauder|barbarian|viking|(norse|tribes?|clans?)(wo)?m(a|e)n)).*$/i,
+	subname : "Path of the Primal Ancestors",
+	fullname : "Primal Ancestors",
+	source : ["P", 50],
+	features : {
 	
-features : {
 "subclassfeature3" : {
 name : "Wisdom of the Ancients",
 minlevel : 3,
