@@ -220,9 +220,7 @@ name : "Channel Divinity: Storm Strike",
 minlevel : 3,
 action : ["action", ""],
 description : desc([
-	"As an action, I infuse a ranged or thrown weapon with lightning and make a ranged weapon attack as normal.",
-	"I create a line of lightning 5 ft wide and 60 ft long, that does 2d10 + my level lightning damage (Dex save for half) to all creatures in the line.",
-	"The target of the weapon attack has disadvantage on save if the weapon attack hits. "]),
+	"As an action, I infuse a ranged or thrown weapon with lightning and make a ranged weapon attack as normal. I create a line of lightning 5 ft wide and 60 ft long, that does 2d10 + my level lightning damage (Dex save for half) to all creatures in the line. The target of the weapon attack has disadvantage on save if the weapon attack hits. "]),
 	
 		},
 	
@@ -240,7 +238,7 @@ description : desc([
 name : "Aura of Alacrity",
 minlevel : 7,
 description : desc([
-"While I'm conscious, allies within range and I add my proficiency bonus to Initative rolls" ]),
+"While I'm conscious, allies within range and I add my proficiency bonus to Initiative rolls" ]),
 additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"],
 addMod : { type : "skill", field : "Init", mod : "Prof. Bonus", text : "I can add my proficiency bonus to initiative rolls." }
 
