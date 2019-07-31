@@ -143,8 +143,9 @@ description : desc([
 	}
 });
 AddSubClass("paladin", "oath of radiance", {
-regExpSearch : /^((?=.*(oath|radiance))|((?=.*(light|power|cleanse))(((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper))))))).*$/i,
-subname : "Oath of Radiance",
+	regExpSearch : /(radiance)/i,
+	subname : "Oath of Radiance",
+	fullname : "Radiance",
 spellcastingExtra : ["guiding bolt", "protection from evil and good", "magic weapon", "scorching ray", "beacon of hope", "daylight", "aura of life", "fire shield", "banishing smite", "greater restoration"],
 features : {
 		
@@ -198,11 +199,13 @@ description : desc([
 		}
 	}	
 });
-AddSubClass("Paladin", "oath of thunder", {
-	regExpSearch : /(oath of thunder)/i,
-	subname : "Oath of Thunder",
-	fullname : "Oath of Thunder",
-	features : {
+
+AddSubClass("paladin", "oath of thunder", {
+regExpSearch : /(thunder)/i,
+subname : "Oath of Thunder",
+fullname : "Thunder",
+spellcastingExtra : ["heroism", "thunderwave", "find steed", "gust of wind", "call lightning", "elemental weapon", "freedom of movement", "stoneskin", "conjure volley", "swift quiver"],
+features : {
 		
 "subclassfeature3" : {
 name : "Bonus Proficiency",
