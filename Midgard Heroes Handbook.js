@@ -36,8 +36,6 @@ description : "\n   " + " When I rage I have advantage on Wisdom saving throws a
 "subclassfeature6" : {
 name : "Spiritual Leader",
 minlevel : 6,
-name : "Spiritual Leader",
-minlevel : 6,
 action : ["action", ""],
 usages : 1,
 recovery : "short rest",
@@ -153,12 +151,11 @@ features : {
 "subclassfeature3" : {
 name : "Channel Divinity: Dawn's Radiance",
 minlevel : 3,
-description : desc([
-	"As an action,  I present my holy symbol or weapon",
-	"Magical darkness created by spells of 3rd level or lower are dispelled",
-	"It also emits bright light in a 20-ft radius and dim light 20-ft beyond that",
-	"This light is sunlight." ]),
 action : ["action", ""],
+description : desc([
+	"As an action,  I present my holy symbol or weapon. It emits bright light in a 20 foot radius and dim light 20 feet beyond that for 1 hour. This light is sunlight.",
+   	"Sources of magical darkness within 20 feet of me that are created by spells of 3rd level or lower are dispelled." ]),
+
 	},
 
 "subclassfeature3.1" : {
@@ -166,10 +163,9 @@ name : "Channel Divinity: Turn the Corrupted",
 minlevel : 3,
 action : ["action"],
 description : desc([
-	"As an action, all undead/creatures native to Shadow Realm/creatures with levels of Shadow Corruption within 30 ft that can hear me must make a Wisdom save",
-	"If one of them fails this save, it is turned for 1 minute or until it takes damage",
-	"Turned: move away, never within 30 ft of me, no reactions or actions other than Dash",
-	"Turned: may Dodge instead of Dash when nowhere to move and unable to escape bonds"]),
+	"As an action, all undead/creatures native to Shadow Realm/creatures with levels of Shadow Corruption within 30 feet that can hear me must make a Wisdom save. A creature that fails this save is Turned for 1 minute or until it takes damage.",
+	"Turned: must move away, never within 30 feet of me, no reactions or actions other than Dash.",
+	"Turned: may Dodge instead of Dash when nowhere to move or unable to escape bonds."]),
 	},
 	
 "subclassfeature7" : {
@@ -177,30 +173,28 @@ name : "Aura of Resolve",
 minlevel : 7,
 description : "\n   " + "While I'm conscious, allies within range and I have advantage on saves vs. spells cast by undead/creatures native to Shadow Realm/creatures with levels of Shadow Corruption",
 additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"],
-savetxt : { immune : ["charmed"] }
+savetxt : { adv_vs : ["spells castundead/creatures native to Shadow Realm/creatures with levels of Shadow Corruption"] }
 	},
 
 "subclassfeature15" : {
 name : "Soul of Light",
 minlevel : 15,
 description : desc([
-	"I can't gain levels of Shadow Corruption",
-	"I am resistant to necrotic damage",
-	"My ability scores and hitpoint maximum can't be reduced"]),
+	"I can't gain levels of Shadow Corruption. I am resistant to necrotic damage, and my Ability Scores and hit-point maximum can't be reduced"]),
 dmgres : ["Necrotic"],	
     	},	
 
 "subclassfeature20" : {
 name : "Radiant Champion",
 minlevel : 20,
-description : desc([
-	"As an action, I suffuse my being with light and for 1 minute and gain benefits:",
-	"At the start of each of my turns, I regain 10 hit points",
-	"When an undead, creature native to the Shadow Realm, or creature with levels of Shadow Corrutption touches me or hits me with a melee attack within 5 feet, they take 2d8 radiant damage", 
-	"Once per turn when I hit an undead, creature native to the Shadow Realm, or creature with levels of Shadow Corrutption they must make a Wisdom save or be incapacitated until the end of their next turn"]),	
 recovery : "long rest",
 usages : 1,
-action : ["action", ""]
+action : ["action", ""],
+description : desc([
+	"As an action, I suffuse my being with light and for 1 minute and gain benefits:",
+	"• At the start of each of my turns, I regain 10 hit points.",
+	"• When an undead, creature native to the Shadow Realm, or creature with levels of Shadow Corrutption touches me or hits me with a melee attack within 5 feet, they take 2d8 radiant damage.", 
+	"• Once per turn when I hit an undead, creature native to the Shadow Realm, or creature with levels of Shadow Corrutption they must make a Wisdom save or be incapacitated until the end of their next turn."]),	
 		}
 	}	
 });
