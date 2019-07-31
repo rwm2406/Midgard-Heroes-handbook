@@ -22,7 +22,7 @@ group : "Primary Sources",
  };
 
 AddSubClass("barbarian", "primal path of the ancestors", {
-regExpSearch : /^(?=.*(warrior|fighter|marauder|barbarian|viking|(norse|tribes?|clans?))(?=.*primal ancestors).*$/i,
+regExpSearch : /^(?=.*(warrior|fighter|marauder|barbarian|viking))(?=.*primal ancestors).*$/i,
 subname : "Primal Path of the Ancestors",
 	
 features : {
