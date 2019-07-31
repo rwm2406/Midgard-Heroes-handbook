@@ -173,7 +173,7 @@ name : "Aura of Resolve",
 minlevel : 7,
 description : "\n   " + "While I'm conscious, allies within range and I have advantage on saves vs. spells cast by undead/creatures native to Shadow Realm/creatures with levels of Shadow Corruption",
 additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"],
-savetxt : { adv_vs : ["spells castundead/creatures native to Shadow Realm/creatures with levels of Shadow Corruption"] }
+savetxt : { adv_vs : ["spells cast by undead/creatures native to Shadow Realm/creatures with levels of Shadow Corruption"] }
 	},
 
 "subclassfeature15" : {
@@ -199,10 +199,9 @@ description : desc([
 	}	
 });
 AddSubClass("paladin", "oath of thunder", {
-regExpSearch : /^((?=.*(thor|perun))|((?=.*(storm|thunder|stealth))(((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper))))))).*$/i,
-subname : "Oath of Thunder",
-spellcastingExtra : ["heroism", "thunderwave", "find steed", "gust of wind", "call lightning", "elemental weapon", "freedom of movement", "stoneskin", "conjure volley", "swift quiver"],
-features : {
+	regExpSearch : /^(?=.*(thunder|lightning|thor))(((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper))))).*$/i,
+	subname : "Oath of Thunder",
+	features : {
 		
 "subclassfeature3" : {
 name : "Bonus Proficiency",
@@ -251,17 +250,16 @@ description : desc([
 "subclassfeature20" : {
 name : "Child of the Storm",
 minlevel : 20,
-description : desc([
-	"As an action, I can gain the following benefits for 1 hour:",
-	"- I don't have disadvantage on Dexterity (Stealth) checks because of armor",
-	"- I have advantage on Dexterity (Stealth) checks and initiative rolls",
-	"- My weapon attacks deal and extra 1d10 lightning or thunder damage",
-	"- I can use an action to unleash a war cry that Frightens creatures on failed Wis save",
-	"- The cry affects those in a 30 ft. cone",
-	"- Those that succeed on the save, can not be affected for 24 hours by another"]),
-recovery : "long rest",
+	recovery : "long rest",
 usages : 1,
-action : ["action", ""]
+action : ["action", "Child of the Storm", "War Cry"],
+description : desc([
+	"As an action, I gain the following benefits for 1 hour or until I'm incapacitated:",
+	"• I don't have disadvantage on Dexterity (Stealth) checks because of armor",
+	"• I have advantage on Dexterity (Stealth) checks and initiative rolls",
+	"• My weapon attacks deal and extra 1d10 lightning or thunder damage",
+	"• I can use an action to unleash a war cry that Frightens creatures in a 30 foot cone on failed Wis save. Those that succeed on either the first Wisdom save, or one at the end of their turn, can not be affected by the War Cry for 24 hours by another"]),
+	
 		}
 	}	
 });
