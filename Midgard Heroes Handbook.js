@@ -43,6 +43,7 @@ spellcastingBonus : {
 	name : "Spiritual Leader",
 	spells : ["calm emotions"],
 	selection : ["calm emotions"],
+action : ["action"],
 usages : 1,
 recovery : "short rest"
 			}
