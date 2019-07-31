@@ -229,7 +229,7 @@ description : desc([
 "subclassfeature3" : {
 name : "Channel Divinity: Turn the Unclean",
 minlevel : 3,
-action : ["action", ""]
+action : ["action", ""],
 description : desc([
 	"As an action, all abberations/fiends within 30 ft that can see or hear me must make a Wis save. A creature that fails this save is Turned for 1 minute, or until it takes damage",
 	"Turned: must move away, never within 30 feet of me, no reactions or actions other than Dash.",
