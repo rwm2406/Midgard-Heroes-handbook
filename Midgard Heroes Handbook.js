@@ -22,7 +22,7 @@ group : "Primary Sources",
  };
 
 AddSubClass("barbarian", "primal path of the ancestors", {
-regExpSearch : /^(?=.*primal ancestors)(?=.*(warrior|fighter|marauder|barbarian|viking|(norse|tribes?|clans?)(wo)?m(a|e)n)).*$/i,
+regExpSearch : /^(?=.*(warrior|fighter|marauder|barbarian|viking|(norse|tribes?|clans?))(?=.*primal ancestors).*$/i,
 subname : "Primal Path of the Ancestors",
 	
 features : {
@@ -91,8 +91,7 @@ minlevel : 3,
 action : ["reaction", ""],
 description : desc([
 	"When a creature within 60 feet of me that I can see makes an ability check, attack roll, or saving throw with advantage, as a reaction I can expend one use of Bardic Inspiration.",
-	"The creature takes a penalty to their roll equal to the number I rolled on my Bardic Inspiration die.",
-	"For a number of rounds equal to the number rolled on the bardic inspiration die, I can add that same number to one ability check, Attack roll, or saving throw."]),
+	"The creature takes a penalty to their roll equal to the number I rolled on my Bardic Inspiration die, and for a number of rounds equal to the number rolled on the bardic inspiration die, I can add that same number to one ability check, Attack roll, or saving throw."]),
 			},
 			
 "subclassfeature6" : {
@@ -101,8 +100,7 @@ minlevel : 6,
 recovery : "short rest",
 usages : 1,
 description : desc([
-	"Whenenever I cast a spell with the chaos descriptor I cause a chaos surge, and regain 1 use of Bardic Inspiration",
-	"I can use this ability once, and regain the ability to do so after a short or long rest."]),
+	"Whenenever I cast a spell with the chaos descriptor I cause a chaos surge, and regain 1 use of Bardic Inspiration."]),
 	},
 	
 "subclassfeature14" : {
@@ -110,8 +108,7 @@ name : "Belief is a Tool",
 minlevel : 14,
 action : ["action", ""],
 description : desc([
-	"As an action, I can change one of my spells known into any other spell of equal or lower level on the Bard spell list. ",
-	"At the end of my next turn my list of spells known returns to normal.",
+	"As an action, I can change one of my spells known into any other spell of equal or lower level on the Bard spell list. At the end of my next turn my list of known spells returns to normal.",
 	"Using this ability causes a chaos magic surge."])
 		}
 	}
@@ -123,7 +120,7 @@ spellcastingExtra : ["entangle", "goodberry", "pass without trace", "spike growt
 	features : {
     
 "subclassfeature3" : {
-name : "Rejuvinating Inspiration",
+name : "Rejuvenating Inspiration",
 minlevel : 3,
 description : desc([
 	"A creature that uses one of my Bardic Inspiration die gains temporary hit points equal to the number rolled on the Bardic Inspiration die + my Charisma modifier,"]),
@@ -133,8 +130,7 @@ description : desc([
 name : "Land's Stride",
 minlevel : 6,
 description : desc([
-	"I can travel through nonmagical, difficult terrain without penalty",
-	"I have advantage on saves vs. plants that impede movement via magical influence.",]),
+	"I can travel through nonmagical, difficult terrain without penalty,and I have advantage on saves vs. plants that impede movement via magical influence.",]),
 savetxt : { adv_vs : ["magical plants that impede movement"] }
 	},
 
@@ -143,8 +139,7 @@ name : "Surge of Vitality",
 minlevel : 14,
 action : ["action", ""],
 description : desc([
-	"As an action, I can expend 1 use of Bardic Inspiration to remove a single disease or condition affecting a creature I can see within 60 ft. ",
-	"The condition can be blinded, charmed, deafened, frightened, paralyzed, or poisoned",])
+	"As an action, I can expend 1 use of Bardic Inspiration to remove a single disease or condition affecting a creature I can see within 60 ft. The condition can be blinded, charmed, deafened, frightened, paralyzed, or poisoned",])
 		}
 	}
 });
