@@ -213,33 +213,34 @@ minlevel : 3,
 description : desc([
 	"I gain proficiency with the Stealth skill" ]),
 skills : ["Stealth"],
-skillstxt : "\n\n" + toUni("Paladin (Oath of Thunder)") + ": Stealth."
       },
       
 "subclassfeature3.1" : {
 name : "Channel Divinity: Storm Strike",
 minlevel : 3,
+action : ["action", ""],
 description : desc([
 	"As an action, I infuse a ranged or thrown weapon with lightning and make a ranged weapon attack as normal.",
 	"I create a line of lightning 5 ft wide and 60 ft long, that does 2d10 + my level lightning damage (Dex save for half) to all creatures in the line.",
 	"The target of the weapon attack has disadvantage on save if the weapon attack hits. "]),
-	action : ["action", ""]
+	
 		},
 	
 "subclassfeature3" : {
 name : "Channel Divinity: Turn the Unclean",
 minlevel : 3,
+action : ["action", ""]
 description : desc([
-	"As an action, all abberations/fiends within 30 ft that can see or hear me must make a Wis save",
-	"If one of them fails this save, it is turned for 1 minute or until it takes damage",
-	"Turned: move away, never within 30 ft of me, no reactions or actions other than Dash",
-	"Turned: may Dodge instead of Dash when nowhere to move and unable to escape bonds"]),
-	},
+	"As an action, all abberations/fiends within 30 ft that can see or hear me must make a Wis save. A creature that fails this save is Turned for 1 minute, or until it takes damage",
+	"Turned: must move away, never within 30 feet of me, no reactions or actions other than Dash.",
+	"Turned: may Dodge instead of Dash when nowhere to move or unable to escape bonds."]),
+		},
+	
 "subclassfeature7" : {
 name : "Aura of Alacrity",
 minlevel : 7,
 description : desc([
-	"While I'm conscious, allies within range and I add my proficiency bonus to Initative rolls" ]),
+"While I'm conscious, allies within range and I add my proficiency bonus to Initative rolls" ]),
 additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"],
 addMod : { type : "skill", field : "Init", mod : "Prof. Bonus", text : "I can add my proficiency bonus to initiative rolls." }
 
@@ -254,9 +255,9 @@ description : desc([
 "subclassfeature20" : {
 name : "Child of the Storm",
 minlevel : 20,
-	recovery : "long rest",
+recovery : "long rest",
 usages : 1,
-action : ["action", "Child of the Storm", "War Cry"],
+action : ["action","War Cry"],
 description : desc([
 	"As an action, I gain the following benefits for 1 hour or until I'm incapacitated:",
 	"• I don't have disadvantage on Dexterity (Stealth) checks because of armor",
