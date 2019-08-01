@@ -76,15 +76,16 @@ regExpSearch : /^(?=.*(college|bard|minstrel|troubadour|jongleur))(?=.*entropy).
 subname : "College of Entropy",
 features : {
 		
-"subclassfeature3" : {
+"subclassfeature3.1" : {
 name : "Bonus Proficiencies",
+minlevel : 3,
 description : desc([
 	"I gain proficiency with Acrobatics, Athletics, and a gaming set of my choice", ]),
 skills : ["Athletics", "Acrobatics"],
 toolProfs : [["Gaming set", 1]],
 	},
 
-"subclassfeature3.1" : {
+"subclassfeature3.2" : {
 name : "Luck Stealer",
 minlevel : 3,
 action : ["reaction", ""],
@@ -129,7 +130,7 @@ description : desc([
 name : "Land's Stride",
 minlevel : 6,
 description : desc([
-	"I can travel through nonmagical, difficult terrain without penalty,and I have advantage on saves vs. plants that impede movement via magical influence.",]),
+	"I can travel through nonmagical, difficult terrain without penalty, and I have advantage on saves vs. plants that impede movement via magical influence.",]),
 savetxt : { adv_vs : ["magical plants that impede movement"] }
 	},
 
@@ -145,7 +146,7 @@ description : desc([
 AddSubClass("paladin", "oath of radiance", {
 	regExpSearch : /(radiance)/i,
 	subname : "Oath of Radiance",
-	fullname : "Radiance",
+fullname : "Paladin (Oath of Radiance)",
 spellcastingExtra : ["guiding bolt", "protection from evil and good", "magic weapon", "scorching ray", "beacon of hope", "daylight", "aura of life", "fire shield", "banishing smite", "greater restoration"],
 features : {
 		
@@ -164,9 +165,7 @@ name : "Channel Divinity: Turn the Corrupted",
 minlevel : 3,
 action : ["action"],
 description : desc([
-	"As an action, all undead/creatures native to Shadow Realm/creatures with levels of Shadow Corruption within 30 feet that can hear me must make a Wisdom save. A creature that fails this save is Turned for 1 minute or until it takes damage.",
-	"Turned: must move away, never within 30 feet of me, no reactions or actions other than Dash.",
-	"Turned: may Dodge instead of Dash when nowhere to move or unable to escape bonds."]),
+	"As an action, all undead, creatures native to Shadow Realm, or creatures with levels of Shadow Corruption within 30 feet that can hear me must make a Wisdom save. A creature that fails this save is Turned for 1 minute or until it takes damage."]),
 	},
 	
 "subclassfeature7" : {
@@ -182,7 +181,9 @@ name : "Soul of Light",
 minlevel : 15,
 description : desc([
 	"I can't gain levels of Shadow Corruption. I am resistant to necrotic damage, and my Ability Scores and hit-point maximum can't be reduced"]),
-dmgres : ["Necrotic"],	
+dmgres : ["Necrotic"],
+savetxt : { immune : ["hit point maximum reduction"] }
+	
     	},	
 
 "subclassfeature20" : {
@@ -192,10 +193,10 @@ recovery : "long rest",
 usages : 1,
 action : ["action", ""],
 description : desc([
-	"As an action, I suffuse my being with light and for 1 minute and gain benefits:",
+	"As an action, I can gain the following benefits for 1 minute:",
 	"• At the start of each of my turns, I regain 10 hit points.",
 	"• When an undead, creature native to the Shadow Realm, or creature with levels of Shadow Corrutption touches me or hits me with a melee attack within 5 feet, they take 2d8 radiant damage.", 
-	"• Once per turn when I hit an undead, creature native to the Shadow Realm, or creature with levels of Shadow Corrutption they must make a Wisdom save or be incapacitated until the end of their next turn."]),	
+	"• Once per turn when I hit one of these creatures they must make a Wisdom save or be incapacitated until the end of their next turn."]),	
 		}
 	}	
 });
@@ -203,7 +204,7 @@ description : desc([
 AddSubClass("paladin", "oath of thunder", {
 regExpSearch : /(thunder)/i,
 subname : "Oath of Thunder",
-fullname : "Thunder",
+fullname : "Paladin (Oath of Thunder)",
 spellcastingExtra : ["heroism", "thunderwave", "find steed", "gust of wind", "call lightning", "elemental weapon", "freedom of movement", "stoneskin", "conjure volley", "swift quiver"],
 features : {
 		
@@ -1393,9 +1394,8 @@ name : "Spirit Guide",
 source : ["X", 23],
 minlevel : 2,
 	description : desc([
-		"I can cast Find Familiar as a ritual",
-		"In additon to the normal benefits of a familiar, my Spirit Guide can concentrate on a spell for me. However, even with it summoned, I can only have 1 concentration spell active.",
-		"If it is concentrating on a spell, my Spirit Guide makes concentration checks when it takes damage, not when I take damage." ]),
+		"I can cast Find Familiar as a ritual. In additon to the normal benefits of a familiar, my Spirit Guide can concentrate on a spell for me. However, even with it summoned, I can only have 1 concentration spell active.",
+		"If it is concentrating on a spell, my Spirit Guide makes its own concentration checks." ]),
 		
 		},
 
