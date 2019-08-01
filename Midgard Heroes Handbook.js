@@ -413,16 +413,17 @@ minlevel : 1,
 description : desc([
 	"I gain proficiency in Acrobatics and Stealth",
 	"I learn the True Strike cantrip" ]),
+skills : ["Stealth", "Acrobatics"],	
 spellcastingBonus : {
 name : "A Claw in the Clowder",
 spells : ["True Strike"],
 selection : ["true strike"],
-skills : ["Stealth", "Acrobatics"]	
 		},
 	},		
 "subclassfeature2" : {
 name : "Channel Divinity: Feline Finesse",
 minlevel : 2,
+action : ["action"],
 description : desc([
 	"I can add a +10 bonus to any Dexterity ability or skill check made by me or someone I choose within 30 ft."	]),
 	},
