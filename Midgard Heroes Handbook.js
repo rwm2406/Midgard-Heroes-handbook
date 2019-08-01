@@ -217,7 +217,7 @@ spellcastingExtra : ["heroism", "thunderwave", "find steed", "gust of wind", "ca
 source : ["Midgard"],
 features : {
 		
-"subclassfeature3" : {
+"subclassfeature3.1" : {
 name : "Bonus Proficiency",
 minlevel : 3,
 description : desc([
@@ -225,24 +225,22 @@ description : desc([
 skills : ["Stealth"],
       },
       
-"subclassfeature3.1" : {
+"subclassfeature3.2" : {
 name : "Channel Divinity: Storm Strike",
 minlevel : 3,
 action : ["action", ""],
 description : desc([
-	"As an action, I infuse a ranged or thrown weapon with lightning and make a ranged weapon attack as normal. I create a line of lightning 5 ft wide and 60 ft long, that does 2d10 + my level lightning damage (Dex save for half) to all creatures in the line. The target of the weapon attack has disadvantage on save if the weapon attack hits. "]),
+	"As an action, I infuse a ranged or thrown weapon with lightning and make a ranged weapon attack as normal. I create a line of lightning 5 ft wide and 60 ft long, that does 2d10 + my level lightning damage (Dex save for half) to all creatures in the line. The target of the weapon attack has disadvantage on save if the weapon attack hits."]),
 	
 		},
 	
-"subclassfeature3" : {
+"subclassfeature3.3" : {
 name : "Channel Divinity: Turn the Unclean",
 minlevel : 3,
-action : ["action", ""],
+action : ["action"],
 description : desc([
-	"As an action, all abberations/fiends within 30 ft that can see or hear me must make a Wis save. A creature that fails this save is Turned for 1 minute, or until it takes damage",
-	"Turned: must move away, never within 30 feet of me, no reactions or actions other than Dash.",
-	"Turned: may Dodge instead of Dash when nowhere to move or unable to escape bonds."]),
-		},
+	"As an action, all abberations/fiends within 30 ft that can see or hear me must make a Wis save. A creature that fails this save is Turned for 1 minute, or until it takes damage."]),
+	},
 	
 "subclassfeature7" : {
 name : "Aura of Alacrity",
@@ -268,13 +266,13 @@ usages : 1,
 action : ["action"],
 description : "\n   " + "At 20th level I gain the Child of the Storm feature (see Notes page below)",
 	toNotesPage : [{
-	name : "Child of the Storm",
-	note : [
-		"As an action, I gain the following benefits for 1 hour or until I'm incapacitated:",
-		"• I don't have disadvantage on Dexterity (Stealth) checks because of armor",
-		"• I have advantage on Dexterity (Stealth) checks and initiative rolls",
-		"• My weapon attacks deal and extra 1d10 lightning or thunder damage",
-		"• I can use an action to unleash a war cry that Frightens creatures in a 30 foot cone on failed Wis save. Those that succeed on either the first Wisdom save, or one at the end of their turn, can not be affected by another War Cry for 24 hours."],	
+name : "Child of the Storm",
+note : [
+	"As an action, I gain the following benefits for 1 hour or until I'm incapacitated:",
+	"• I don't have disadvantage on Dexterity (Stealth) checks because of armor",
+	"• I have advantage on Dexterity (Stealth) checks and initiative rolls",
+	"• My weapon attacks deal and extra 1d10 lightning or thunder damage",
+	"• I can use an action to unleash a war cry that Frightens creatures in a 30 foot cone on failed Wis save. Those that succeed on either the first Wisdom save, or one at the end of their turn, can not be affected by another War Cry for 24 hours."],	
 	page3notes : true,
 	}],
 		}
