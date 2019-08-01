@@ -21,10 +21,11 @@ abbreviation : "Midgard",
 group : "Primary Sources",
  };
 AddSubClass("barbarian", "primal ancestors", {
-	regExpSearch : /(primal ancestors)/i,
-	subname : "Primal Path of the Ancestors",
-	fullname : "Primal Ancestors",
-	features : { 
+regExpSearch : /(primal ancestors)/i,
+subname : "Primal Path of the Ancestors",
+fullname : "Primal Ancestors",
+source : ["Midgard"],
+features : { 
 	
 "subclassfeature3" : {
 name : "Wisdom of the Ancients",
@@ -74,6 +75,7 @@ description : desc([
 AddSubClass("bard", "college of entropy", {
 regExpSearch : /^(?=.*(college|bard|minstrel|troubadour|jongleur))(?=.*entropy).*$/i,
 subname : "College of Entropy",
+source : ["Midgard"],
 features : {
 		
 "subclassfeature3.1" : {
@@ -117,7 +119,8 @@ AddSubClass("bard", "greenleaf college", {
 regExpSearch : /^(?=.*(college|bard|minstrel|troubadour|jongleur))(?=.*greenleaf).*$/i,
 subname : "Greenleaf College",
 spellcastingExtra : ["entangle", "goodberry", "pass without trace", "spike growth", "conjure animals", "daylight", "conjure woodland beings", "dominate beast", "commune with nature", "tree stride"],
-	features : {
+source : ["Midgard"],
+features : {
     
 "subclassfeature3" : {
 name : "Rejuvenating Inspiration",
@@ -148,6 +151,7 @@ AddSubClass("paladin", "oath of radiance", {
 	subname : "Oath of Radiance",
 fullname : "Paladin (Oath of Radiance)",
 spellcastingExtra : ["guiding bolt", "protection from evil and good", "magic weapon", "scorching ray", "beacon of hope", "daylight", "aura of life", "fire shield", "banishing smite", "greater restoration"],
+source : ["Midgard"],
 features : {
 		
 "subclassfeature3.1" : {
@@ -210,6 +214,7 @@ regExpSearch : /(thunder)/i,
 subname : "Oath of Thunder",
 fullname : "Paladin (Oath of Thunder)",
 spellcastingExtra : ["heroism", "thunderwave", "find steed", "gust of wind", "call lightning", "elemental weapon", "freedom of movement", "stoneskin", "conjure volley", "swift quiver"],
+source : ["Midgard"],
 features : {
 		
 "subclassfeature3" : {
@@ -260,22 +265,28 @@ name : "Child of the Storm",
 minlevel : 20,
 recovery : "long rest",
 usages : 1,
-action : ["action","War Cry"],
-description : desc([
-	"As an action, I gain the following benefits for 1 hour or until I'm incapacitated:",
-	"• I don't have disadvantage on Dexterity (Stealth) checks because of armor",
-	"• I have advantage on Dexterity (Stealth) checks and initiative rolls",
-	"• My weapon attacks deal and extra 1d10 lightning or thunder damage",
-	"• I can use an action to unleash a war cry that Frightens creatures in a 30 foot cone on failed Wis save. Those that succeed on either the first Wisdom save, or one at the end of their turn, can not be affected by the War Cry for 24 hours by another"]),
-	
+action : ["action"],
+description : "\n   " + "At 20th level I gain the Child of the Storm feature (see Notes page below)",
+	toNotesPage : [{
+	name : "Child of the Storm",
+	note : [
+		"As an action, I gain the following benefits for 1 hour or until I'm incapacitated:",
+		"• I don't have disadvantage on Dexterity (Stealth) checks because of armor",
+		"• I have advantage on Dexterity (Stealth) checks and initiative rolls",
+		"• My weapon attacks deal and extra 1d10 lightning or thunder damage",
+		"• I can use an action to unleash a war cry that Frightens creatures in a 30 foot cone on failed Wis save. Those that succeed on either the first Wisdom save, or one at the end of their turn, can not be affected by another War Cry for 24 hours."],	
+	page3notes : true,
+	}],
 		}
 	}	
 });
+
 AddSubClass("cleric", "apocalypse domain", {
-	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(death|apocalypse|destruction)\b).*$/i,
-	subname : "Apocalypse Domain",
-	spellcastingExtra : ["dissonant whispers", "hellish rebuke", "enthrall", "magic mouth", "fear", "stinking cloud", "blight", "phantasmal killer", "contact other plane", "telekinesis"],
-	features : {
+regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(death|apocalypse|destruction)\b).*$/i,
+subname : "Apocalypse Domain",
+spellcastingExtra : ["dissonant whispers", "hellish rebuke", "enthrall", "magic mouth", "fear", "stinking cloud", "blight", "phantasmal killer", "contact other plane", "telekinesis"],
+source : ["Midgard"],
+features : {
 					    
 "subclassfeature1" : { 
 name : "Ranting Ruin",
@@ -333,8 +344,8 @@ AddSubClass("cleric", "beer domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(beer|hearth|comfort)\b).*$/i,
 subname : "Beer Domain",
 spellcastingExtra : ["comprehend languages" , "heroism", "blur", "suggestion", "aura of vitality", "hypnotic pattern", "confusion", "resilient sphere", "dream", "modify memory"],
+source : ["Midgard"],
 features : {
-
 
 "subclassfeature1" : {
 name : "Disciple of the Draught",
@@ -396,6 +407,7 @@ AddSubClass("cleric", "cat domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(cat|animal|wild)\b).*$/i,
 subname : "Cat Domain",
 spellcastingExtra : ["find familiar", "speak with animals", "beast sense", "pass without trace", "bestow curse", "nondetection", "dimension door", "locate creature", "commune with nature", "mislead"],
+source : ["Midgard"],
 features : {
 	
 "subclassfeature1" : {
@@ -423,7 +435,7 @@ name : "Eyes of the Cat",
 minlevel : 6,
 description : desc([
 	"I gain darkvision out to 60 ft.",
-    "If I already have darkvision the range increases to 90 ft."]),
+    	"If I already have darkvision the range increases to 90 ft."]),
 vision : [["Darkvision", "fixed60"], ["Darkvision", "+30"]]
 	},
 
@@ -450,6 +462,7 @@ AddSubClass("cleric", "clockwork domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(clockwork|machine|time)\b).*$/i,
 subname : "Clockwork Domain",
 spellcastingExtra : ["grease", "floating disk", "heat metal", "enlarge/reduce", "conjure barrage", "haste", "fabricate", "secret chest", "animate objects", "soul forging"],
+source : ["Midgard"],
 features : {
 					    
 "subclassfeature1" : {
@@ -486,7 +499,7 @@ description : desc([
 name : "Clockwork Companion",
 minlevel : 6,
 description : desc([
-" I build or acquire a clockwork companion which functions in most ways as a ranger's companion.", 
+	" I build or acquire a clockwork companion which functions in most ways as a ranger's companion.", 
 	"It adds my proficiency bonus to AC, attacks, damage, and save/skill proficiencies",
 	"Its hit point maximum equals four times my cleric level.",
 	"It takes a turn on my initiative; It only takes the Dodge action unless I command it otherwise",
@@ -522,6 +535,7 @@ AddSubClass("cleric", "darkness domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(darkness|shadow|night)\b).*$/i,
 subname : "Darkness Domain",
 spellcastingExtra : ["shadow armor", "sleep", "darkness", "dark path", "legion", "nondetection", "night terrors", "phantasmal killer", "dark dementing", "mislead"],
+source : ["Midgard"],
 features : {
 
 "subclassfeature1" : {
@@ -595,6 +609,7 @@ AddSubClass("cleric", "dragon domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(drake|dragon|magic)\b).*$/i,
 subname : "Dragon Domain",
 spellcastingExtra : ["detect magic", "thunderwave", "lair sense", "enthrall", "catch the breath", "fear", "blight", "scale rot", "claws of the earth dragon", "legend lore"],
+source : ["Midgard"],
 features : {
 					    
 "subclassfeature1" : {
@@ -612,21 +627,20 @@ savetxt : { adv_vs : ["frightened"]}
 "subclassfeature2" : {
 name : "Channel Divinity: Charmer of Reptiles",
 minlevel : 2,
- action : ["action", ""],
+action : ["action", ""],
 description : desc([
 	"As an action, all reptilian creatures within 30 feet that can see me must make a Wisdom save", 
 	"If failed, they are charmed by me for 1 minute or until they take damage." ]),
         },
 "subclassfeature6" : {
-	name : "Channel Divinity: Dragon's Resistance",
-	minlevel : 6,
- 	action : ["reaction", ""],
-	description : desc([ 
-		"If I fail a saving throw, I can expend a use of Channel Divinity and choose to succeed instead" ]),
+name : "Channel Divinity: Dragon's Resistance",
+minlevel : 6,
+action : ["reaction", ""],
+description : desc([ 
+	"If I fail a saving throw, I can expend a use of Channel Divinity and choose to succeed instead" ]),
 	},
 "subclassfeature8" : {
 name : "Divine Strike",
-
 minlevel : 8,
 description : desc([
 	"Once per turn, when I hit a creature with a weapon attack, I do extra fire damage", ]),
@@ -654,9 +668,10 @@ AddSubClass("cleric", "hunger domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(hunger|famished|cannibal)\b).*$/i,
 subname : "Hunger Domain",
 spellcastingExtra : ["goodberry", "ray of sickness", "locate animals or plants", "suggestion", "hunger of hadar", "vampiric touch", "blight", "grasping vine", "cloudkill", "cone of cold"],
+source : ["Midgard"],
 features : {
 					    
-"subclassfeature1" : {
+"subclassfeature1.1" : {
 name : "Unsated",
 minlevel : 1,
 description : desc([
@@ -666,7 +681,6 @@ description : desc([
 	]),
 toolProfs : ["Cook's utensils"],
 skills : ["Survival"],
-
 spellcastingBonus : {
 name : "Bonus Cantrip (Poison Spray)",
 spells : ["poison spray"],
@@ -730,6 +744,7 @@ AddSubClass("cleric", "hunting domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(hunt|wild|hunting)\b).*$/i,
 subname : "Hunting Domain",
 spellcastingExtra : ["ensaring strike", "hunter's mark", "locate animals or plants", "pass without trace", "tiny hut", "speak with plants", "faithful hound", "grasping vine", "commune with nature", "hold monster"],
+source : ["Midgard"],
 features : {
 					    
 "subclassfeature1" : {
@@ -750,12 +765,12 @@ description : desc([
 	},
 	
 "subclassfeature6" : {
-	name : "Resolute Hunter",
-	minlevel : 6,
-	description : desc([ 
-		"Use the \"Choose Feature\" button above to add a favored enemy to the third page.",
-		"I choose a Favored Enemy as if I was a ranger, and gain all the same benefits as that feature.",
-		"I gain an additional Favored Enemy at 10th level, and 16th level." ]),
+name : "Resolute Hunter",
+minlevel : 6,
+description : desc([ 
+	"Use the \"Choose Feature\" button above to add a favored enemy to the third page.",
+	"I choose a Favored Enemy as if I was a ranger, and gain all the same benefits as that feature.",
+	"I gain an additional Favored Enemy at 10th level, and 16th level." ]),
 additional :  levels.map(function (n) {
 					return n < 10 ? "1 favored enemy" : (n < 16 ? 1 : 2) + " favored enemies";
 				}),
@@ -849,7 +864,7 @@ name : "Hunting Quest",
 minlevel : 17,
 description : desc([
 	"I can begin a holy quest to slay a known quarry. If it is slain within 3 months I can create the following regional effect after a week of residence in a particular location.",
-	 "Wisdom (Survival) checks made to procure food from hunting, locate fresh water, or to find campsites that are secure against predators are made with advantage within 3 miles of my home."]),
+	"Wisdom (Survival) checks made to procure food from hunting, locate fresh water, or to find campsites that are secure against predators are made with advantage within 3 miles of my home."]),
 		}
 	}
 });
@@ -858,6 +873,7 @@ AddSubClass("cleric", "Justice domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(justice|law|order)\b).*$/i,
 subname : "Justice Domain",
 spellcastingExtra : ["longstrider", "thorn whip", "hold person", "see invisibility", "blade of wrath", "fear", "inspiring speech", "faithful hound", "arcane hand", "holy ground"],
+source : ["Midgard"],
 features : {
 					    
 "subclassfeature1" : {
@@ -878,14 +894,14 @@ description : desc([
         },
         
 "subclassfeature6" : {
-	name : "Hand of Justice",
-	minlevel : 6,
-	description : desc([ 
-		"I am immunue to the Frightened condition" ]),
-  savetxt : { immune : ["charmed"] }
+name : "Hand of Justice",
+minlevel : 6,
+description : desc([ 
+	"I am immunue to the Frightened condition" ]),
+savetxt : { immune : ["charmed"] }
   	},
 
-  "subclassfeature8" : {
+"subclassfeature8" : {
 name : "Divine Strike",
 minlevel : 8,
 description : desc([
@@ -910,6 +926,7 @@ AddSubClass("cleric", "Labyrinth domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(maze|labyrinth|minotaur)\b).*$/i,
 subname : "Labyrinth Domain",
 spellcastingExtra : ["alarm", "expeditious retreat", "misty step", "pass without trace", "hypnotic pattern", "nondetection", "dimension door", "hallucinatory terrain", "mislead", "passwall"],
+source : ["Midgard"],
 features : {
 
 "subclassfeature1" : {
@@ -982,6 +999,7 @@ AddSubClass("cleric", "moon domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(moon|night|sleep)\b).*$/i,
 subname : "Moon Domain",
 spellcastingExtra : ["faerie fire", "witch bolt", "crown of maddness", "moonbeam", "fear", "hypnotic pattern", "compulsion", "greater invisibility", "dream", "hold monster"],
+source : ["Midgard"],
 features : {
 
 "subclassfeature1" : {
@@ -1037,6 +1055,7 @@ AddSubClass("cleric", "mountain domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(mountain|earth|peak)\b).*$/i,
 subname : "Mountain Domain",
 spellcastingExtra : ["feather fall", "jump", "enhance ability", "spider climb", "meld into stone", "sleet storm", "stone shape", "stoneskin", "commune with nature", "cone of cold"],
+source : ["Midgard"],
 features : {
 
 "subclassfeature1.1" : {
@@ -1097,6 +1116,7 @@ AddSubClass("cleric", "ocean domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(ocean|sea|water)\b).*$/i,
 subname : "Ocean Domain",
 spellcastingExtra : ["fog cloud", "speak with animals", "locate animals or plants", "misty step", "gaseous form", "water breathing", "conjure minor elementals", "black tentacles", "awaken", "conjure elemental"],
+source : ["Midgard"],
 features : {
 
 "subclassfeature1" : {
@@ -1155,6 +1175,7 @@ AddSubClass("cleric", "prophecy domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(prophecy|oracle|future)\b).*$/i,
 subname : "Prophecy Domain",
 spellcastingExtra : ["divine favor", "hex", "mirror image", "see invisibility", "counterspell", "slow", "arcane eye", "compulsion", "contact other plane", "modify memory"],
+source : ["Midgard"],
 features : {
 
 "subclassfeature1" : {
@@ -1210,6 +1231,7 @@ AddSubClass("cleric", "speed domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(speed|momentum|fast)\b).*$/i,
 subname : "Speed Domain",
 spellcastingExtra : ["expeditious retreat", "feather fall", "blur", "web", "haste", "slow", "conjure minor elementals", "dimension door", "hold monster", "teleportation circle"],
+source : ["Midgard"],
 features : {
 
 "subclassfeature1" : {
@@ -1268,6 +1290,7 @@ AddSubClass("cleric", "travel domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(travel|voyage|journey)\b).*$/i,
 subname : "Travel Domain",
 spellcastingExtra : ["comprehend languages", "longstrider", "find steed", "pass without trace", "haste", "water walk", "dimension door","freedom of movement", "shadow realm gateway", "teleportation circle"],
+source : ["Midgard"],
 features : {
 
 "subclassfeature1.1" : {
@@ -1328,6 +1351,7 @@ AddSubClass("cleric", "void domain", {
 regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(void|emptiness|beyond)\b).*$/i,
 subname : "Void Domain",
 spellcastingExtra : ["ray of sickness", "protection from the void", "destructive resonance", "rope trick", "gaseous form", "void strike", "dimension door","nether weapon", "contact other plane", "living shadows"],
+source : ["Midgard"],
 features : {
 
 "subclassfeature1.1" : {
