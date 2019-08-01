@@ -155,8 +155,7 @@ name : "Channel Divinity: Dawn's Radiance",
 minlevel : 3,
 action : ["action", ""],
 description : desc([
-	"As an action,  I present my holy symbol or weapon. It emits bright light in a 20 foot radius and dim light 20 feet beyond that for 1 hour. This light is sunlight.",
-   	"Sources of magical darkness within 20 feet of me that are created by spells of 3rd level or lower are dispelled." ]),
+	"As an action I emit bright light in a 20 foot radius and dim light 20 feet beyond that for 1 hour. This light is sunlight. Sources of magical darkness within 20 feet of me that are created by spells of 3rd level or lower are dispelled."]),
 
 	},
 
@@ -173,7 +172,7 @@ name : "Aura of Resolve",
 minlevel : 7,
 description : "\n   " + "While I'm conscious, allies within range and I have advantage on saves vs. spells cast by undead/creatures native to Shadow Realm/creatures with levels of Shadow Corruption",
 additional : ["", "", "", "", "", "", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "10-foot aura", "30-foot aura", "30-foot aura", "30-foot aura"],
-savetxt : { adv_vs : ["spells cast by undead/creatures native to Shadow Realm/creatures with levels of Shadow Corruption"] }
+savetxt : { adv_vs : ["spells cast by undead, creatures native to Shadow Realm, and creatures with levels of Shadow Corruption"] }
 	},
 
 "subclassfeature15" : {
@@ -192,13 +191,19 @@ minlevel : 20,
 recovery : "long rest",
 usages : 1,
 action : ["action", ""],
-description : desc([
-	"As an action, I can gain the following benefits for 1 minute:",
+description : "\n   " + "At 20th level I gain the Radiant Champion feature (see Notes page below)",
+toNotesPage : [{
+name : "Radiant Champion",
+ote : [
+"As an action, I can gain the following benefits for 1 minute:",
 	"• At the start of each of my turns, I regain 10 hit points.",
 	"• When an undead, creature native to the Shadow Realm, or creature with levels of Shadow Corrutption touches me or hits me with a melee attack within 5 feet, they take 2d8 radiant damage.", 
-	"• Once per turn when I hit one of these creatures they must make a Wisdom save or be incapacitated until the end of their next turn."]),	
-		}
-	}	
+	"• Once per turn when I hit one of these creatures they must make a Wisdom save or be incapacitated until the end of their next turn."],	
+	page3notes : true,
+	}],
+	
+		},
+	},
 });
 
 AddSubClass("paladin", "oath of thunder", {
