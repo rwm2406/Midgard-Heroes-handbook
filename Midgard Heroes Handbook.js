@@ -150,7 +150,7 @@ fullname : "Paladin (Oath of Radiance)",
 spellcastingExtra : ["guiding bolt", "protection from evil and good", "magic weapon", "scorching ray", "beacon of hope", "daylight", "aura of life", "fire shield", "banishing smite", "greater restoration"],
 features : {
 		
-"subclassfeature3" : {
+"subclassfeature3.1" : {
 name : "Channel Divinity: Dawn's Radiance",
 minlevel : 3,
 action : ["action", ""],
@@ -159,7 +159,7 @@ description : desc([
 
 	},
 
-"subclassfeature3.1" : {
+"subclassfeature3.2" : {
 name : "Channel Divinity: Turn the Corrupted",
 minlevel : 3,
 action : ["action"],
@@ -182,7 +182,6 @@ description : desc([
 	"I can't gain levels of Shadow Corruption. I am resistant to necrotic damage, and my Ability Scores and hit-point maximum can't be reduced"]),
 dmgres : ["Necrotic"],
 savetxt : { immune : ["hit point maximum reduction"] }
-	
     	},	
 
 "subclassfeature20" : {
@@ -190,15 +189,15 @@ name : "Radiant Champion",
 minlevel : 20,
 recovery : "long rest",
 usages : 1,
-action : ["action", ""],
+action : ["action"],
 description : "\n   " + "At 20th level I gain the Radiant Champion feature (see Notes page below)",
-toNotesPage : [{
-name : "Radiant Champion",
-ote : [
-"As an action, I can gain the following benefits for 1 minute:",
-	"• At the start of each of my turns, I regain 10 hit points.",
-	"• When an undead, creature native to the Shadow Realm, or creature with levels of Shadow Corrutption touches me or hits me with a melee attack within 5 feet, they take 2d8 radiant damage.", 
-	"• Once per turn when I hit one of these creatures they must make a Wisdom save or be incapacitated until the end of their next turn."],	
+	toNotesPage : [{
+	name : "Radiant Champion",
+	note : [
+		"As an action, I can gain the following benefits for 1 minute:",
+		"• At the start of each of my turns, I regain 10 hit points.",
+		"• When an undead, creature native to the Shadow Realm, or creature with levels of Shadow Corrutption touches me or hits me with a melee attack within 5 feet, they take 2d8 radiant damage.", 
+		"• Once per turn when I hit one of these creatures they must make a Wisdom save or be incapacitated until the end of their next turn."],	
 	page3notes : true,
 	}],
 	
@@ -1391,12 +1390,11 @@ recovery : "long rest"
 AddSubClass("druid", "circle of the stones", {
 regExpSearch : /^(?=.*(druid|shaman))(?=.*stones).*$/i,
 subname : "Circle of the Stones",
-
+source : ["Midgard"],
 features : {
 
 "subclassfeature2" : {
 name : "Spirit Guide",
-source : ["X", 23],
 minlevel : 2,
 	description : desc([
 		"I can cast Find Familiar as a ritual. In additon to the normal benefits of a familiar, my Spirit Guide can concentrate on a spell for me. However, even with it summoned, I can only have 1 concentration spell active.",
