@@ -352,17 +352,19 @@ description : desc([
 	"I also gain proficiency with Brewer's supplies. Ability checks that I make with them use double my proficiency bonus." ]),
 
 skillstxt : "\n\n" + toUni("Beer Domain") + ": Choose Insight or Medicine.",
+toolProfs : ["brewer's supplies"],
+
 spellcastingBonus : {
 name : "Disciple of the Draught",
 spells : ["message"],
-selection : ["message"],
-toolProfs : ["brewer's supplies"]},
+selection : ["message"]},
 
 },	
 
 "subclassfeature2" : {
 name : "Channel Divinity: Blessed Brew",
 minlevel : 2,
+action : ["action"],
 description : desc([
 	"As an action I can turn any liquid into a number of doses of Blessed Brew equal to 1 + my Wisdom modifier. Anyone who drinks one dose of Blessed Brew can choose one of the following benefits for 1 hour:", 
 	"• Advantage on Charisma-based skill checks",
