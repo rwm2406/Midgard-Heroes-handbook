@@ -147,8 +147,8 @@ description : desc([
 	}
 });
 AddSubClass("paladin", "oath of radiance", {
-	regExpSearch : /(radiance)/i,
-	subname : "Oath of Radiance",
+regExpSearch : /(radiance)/i,
+subname : "Oath of Radiance",
 fullname : "Paladin (Oath of Radiance)",
 spellcastingExtra : ["guiding bolt", "protection from evil and good", "magic weapon", "scorching ray", "beacon of hope", "daylight", "aura of life", "fire shield", "banishing smite", "greater restoration"],
 source : ["Midgard"],
@@ -304,8 +304,7 @@ languageProfs : [1]
 name : "Channel Divinity: Damnation",
 minlevel : 2,
 description : desc([
-	"As an action, all hostile creatures within 30 ft. that I can see must make a Wis save", 
-	"If failed, each takes (3d6 + my cleric level) necrotic damage, or half as much on a success. If they have total cover, they take no damage."]),
+	"As an action, all hostile creatures within 30 ft. that I can see must make a Wis save. If failed, each takes (3d6 + my cleric level) necrotic damage, or half as much on a success. If they have total cover, they take no damage."]),
 	action : ["action", ""]
 		},
 		
@@ -313,8 +312,7 @@ description : desc([
 name : "Channel Divinity: Weight of Guilt",
 minlevel : 6,
 description : desc([ 
-	"As an action, one creature within 60 ft that I can see must make a Wis save",
-	"If failed, for 1 minute I can cast a Zone of Truth spell, affecting only them, without expending a spell slot",
+	"As an action, one creature within 60 ft that I can see must make a Wis save. If failed, for 1 minute I can cast a Zone of Truth spell, affecting only them, without expending a spell slot.",
 	"The target automatically fails their save for Zone of Truth."]),
 	action : ["action", ""]
 	},
@@ -358,7 +356,7 @@ spellcastingBonus : {
 name : "Disciple of the Draught",
 spells : ["message"],
 selection : ["message"],
-toolProfs : ["Brewer's supplies"]},
+toolProfs : ["brewer's supplies"]},
 
 },	
 
@@ -366,11 +364,10 @@ toolProfs : ["Brewer's supplies"]},
 name : "Channel Divinity: Blessed Brew",
 minlevel : 2,
 description : desc([
-	"As an action I can turn any liquid into a number of doses of Blessed Brew equal to 1 + my Wisdom modifier.",
-	"Anyone who drinks one dose of Blessed Brew can choose one of the following benefits for 1 hour:", 
-	"- Advantage on Charisma-based skill checks",
-	"- A +1 bonus to AC", 
-	"- A +1 increase to the DC of saving throws against their castings of enchantment spells.",
+	"As an action I can turn any liquid into a number of doses of Blessed Brew equal to 1 + my Wisdom modifier. Anyone who drinks one dose of Blessed Brew can choose one of the following benefits for 1 hour:", 
+	"• Advantage on Charisma-based skill checks",
+	"• A +1 bonus to AC", 
+	"• A +1 increase to the DC of saving throws against their castings of enchantment spells.",
 	"Creatures can only be affected by 1 dose of Blessed Brew at a time."]),
 		},
 		
