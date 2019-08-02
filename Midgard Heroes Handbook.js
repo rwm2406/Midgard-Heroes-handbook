@@ -147,9 +147,8 @@ description : desc([
 	}
 });
 AddSubClass("paladin", "oath of radiance", {
-regExpSearch : /(radiance)/i,
+regExpSearch : /^(?=.*(knight|fighter|warrior|warlor))(?=.*\b(radiant|radiance|light)\b).*$/i,
 subname : "Oath of Radiance",
-fullname : "Paladin (Oath of Radiance)",
 spellcastingExtra : ["guiding bolt", "protection from evil and good", "magic weapon", "scorching ray", "beacon of hope", "daylight", "aura of life", "fire shield", "banishing smite", "greater restoration"],
 source : ["Midgard"],
 features : {
@@ -1396,7 +1395,7 @@ SpellsList["blade of wrath"] = {
 	compMaterial : "a rebuke of evil, written in Celestial",
 	duration : "Conc, 10 mins",
 	save : "Wis",
-	description : "melee attack, 2d8 fire dmg + 2d8 rad dmg + 1d8/SL; aberrations/fey/fiends struck make a Wisdom save or be frightened for 1 round; bright light 20-ft, dim light 20-ft.",
+	description : "melee attack, 2d8 fire dmg + 2d8 rad dmg + 1d8/SL; see book for more details",
 	descriptionFull : "You create a sword of pure white fire in your free hand. The blade is similar in size and shape to a longsword, and it lasts for the duration. If you let go of the blade it disappears, but you can call it forth again as a bonus action. You can use your action to make a melee spell attack with the blade. On a hit, the target takes 2d8 fire damage and 2d8 radiant damage. An aberration, fey, fiend, or undead creature damaged by the blade must succeed on a Wisdom saving throw or be frightened until the start of your next turn. The blade sheds bright light in a 20-foot radius and dim light for an additional 20 feet." + AtHigherLevels + "When you cast this spell using a spell slot of 4th level or higher, the fire damage or the radiant damage (your choice) increases by 1d8 for each slot level above 3rd."
 
 };
@@ -1409,7 +1408,7 @@ SpellsList["catch the breath"] = {
 	range : "Self",
 	components : "V", 
 	duration : "Instantaneous",
-	description : "Cast as a reaction when you are targeted by a breath weapon to take no damage if you save; on your next turn, ranged spell attack for 3d10 force damage",
+	description : "When targeted by a breath weapon;no damage if you save; next turn, spell attack for 3d10 force dmg",
 	descriptionFull : "You can cast this spell as a reaction when you're targeted by a breath weapon. Doing so gives you advantage on your saving throw against the breath weapon. If your saving throw succeeds, you take no damage from the attack even if a successful save normally only halves the damage. Whether your saving throw succeeded or failed, you absorb and store energy from the attack. On your next turn, you can make a ranged spell attack against a target within 60 feet. On a hit, the target takes 3d10 force damage. If you opt not to make this attack, the stored energy dissipates harmlessly." + AtHigherLevels + "When you cast this spell using a spell slot of 4th level or higher, the damage done by your attack increases by 1d10 for each slot level above 3rd."
 };
 SpellsList["claws of the earth dragon"] = {
@@ -1422,7 +1421,7 @@ SpellsList["claws of the earth dragon"] = {
 	components : "V", 
 	duration : "Instantaneous",
 	save : "Str",
-	description : "Str save for 6d8+1d8/SL bludgeoning damage and knocked prone, additional 1d6/10-ft bludgeoning damage if flying or leviatating; save halves & not prone",
+	description : "Str save:6d8+1d8/SL Bludg. dmg and knocked prone (save 1/2&not prone)+1d6/10-ft if flying",
 	descriptionFull : "You summon the power of the earth dragon and shoot a ray at one target within 60 feet. The target falls prone and takes 6d8 bludgeoning damage from being slammed to the ground. If the target was flying or levitating, it takes an additional 1d6 bludgeoning damage per 10 feet it falls. If the target makes a successful Strength saving throw, damage is halved, it doesn't fall, and it isn't knocked prone." + AtHigherLevels + "At Higher Levels. When you cast this spell using a spell slot of 6th level or higher, the damage done by the attack increases by 1d8 and the range increases by 10 feet for each slot level above 5th."
 };
 SpellsList["dark dementing"] = {
@@ -1436,7 +1435,7 @@ SpellsList["dark dementing"] = {
 	compMaterial : "a moonstone",
 	duration : "10 mins",
 	save : "Cha",
-	description : "A creature must save or become frightened; extra save each time it takes damage; add additional effects; see book",
+	description : "1 crea save or frightened; end of each turn save to end/wont attack dim/darkness/must move to light",
 	descriptionFull : "A dark shadow creeps across the target's mind and leaves a small bit of shadow essence behind, triggering a profound fear of the dark. The target creature must make a Charisma saving throw. If it fails, the target becomes frightened of you for the duration. The creature will not willingly enter or attack into a space that isn't brightly lit. If it's in dim light or darkness, the creature must either move toward bright light or create its own (by lighting a lantern, casting a light spell, etc. A frightened creature repeats the saving throw each time it takes damage, ending the effect on a success."
 	};
 
@@ -1474,7 +1473,7 @@ SpellsList["holy ground"] = {
 	components : "V,S,M",
 	compMaterial : "a vial of holy water that is consumed in the casting)",
 	duration : "Con, 10 mins",
-	description : "60-ft radius protected agaisnt being raised as undead; add additional effects; see B",
+	description : "60-ft rad protects against being raised/animated as undead by spells of 4th level or lower: see book",
 	descriptionFull : "You invoke the divine powers to bless the ground within 60 feet of you. Creatures slain in the area of effect cannot be raised as undead by magic or by the abilities of monsters, even if the corpse is later removed from the area. Any spell of 4th level or lower that would summon or animate undead within the area fails automatically. Such spells cast with spell slots of 5th level or higher function normally." + AtHigherLevels + "When you cast this spell using a spell slot of 6th level or higher, the level of spells that are prevented from functioning increases by 1 for each slot level above 5th."
 };
 
@@ -1483,11 +1482,11 @@ SpellsList["inspiring speech"] = {
 	classes : ["bard", "cleric", "paladin"],
 	level : 4,
 	school : "Ench",
-	time : "10 mins",
+	time : "10 min",
 	range : "60 ft",
 	components : "V", 
 	duration : "1 hour",
-	description : "Each creature that listens +1 to attack rolls, advt agaisnt charm and frightened conditions; temp hp=spellcasting mod",
+	description : "Each creature that listens, +1 to attack rolls, advt vs charm and frightened;+ temp hp=spellcasting mod",
 	descriptionFull : "The verbal component of this spell is a 10-minute-long, rousing speech by you. At the end of the speech, all your allies within the area of effect who heard the speech gain a +1 bonus on attack rolls and have advantage on saving throws against effects that cause the charmed or frightened condition for 1 hour. Additionally, each recipient gains temporary hit points equal to your spellcasting ability modifier. If you move farther than 1 mile from your allies or you die, this spell ends. A character can be affected by only one inspiring speech at a time; subsequent, overlapping castings have no additional effect and don't extend the spell's duration."
 };
 SpellsList["lair sense"] = {
@@ -1501,7 +1500,7 @@ SpellsList["lair sense"] = {
 	components : "V,S,M\u0192",
 	compMaterial : "treasure worth at least 500 gp,which is not consumed in casting",
 	duration : "24 hours",
-	description : "You know if any Tiny or larger creature enters an area you designate no larger than 100-ft. cube +50-ft&12 hours/SL. ; see book for more details",
+	description : "know if any Tiny or larger creature enters a100-ft. cube (+50-ft&12 hours/SL); see book for more details",
 	descriptionFull : "You set up a magical boundary around your lair. The boundary can't exceed the dimensions of a 100-foot cube,but within that maximum, you can shape it as you like, to follow the walls of a building or cave, for example. While the spell lasts, you instantly become aware of any Tiny or larger creature that enters the enclosed area. You know the creature's type but nothing else about it. You are also aware when creatures leave the area. This awareness is enough to wake you from sleep, and you receive the knowledge as long as you're on the same plane of existence as your lair." + AtHigherLevels + "When you cast this spell using a spell slot of 3rd level or higher, add 50 feet to the maximum dimensions of the cube and add 12 hours to the spell's duration for each slot level above 2nd."
 	
 };
@@ -1582,7 +1581,7 @@ SpellsList["scale rot"] = {
 	compMaterial : "a piece of rotten meat",
 	duration : "Conc, 1 min",
 	save : "Cha",
-	description : "1 crea with natural armor/SL save or attacks against it have advtg and it can't regain hitpoints",
+	description : "1 crea with natural armor/SL  Con save or attacks against it have advtg and it can't regain hp",
 	descriptionFull : "You summon death and decay to plague your enemies. One creature of your choosing within 30 feet of you that has natural armor must make a Constitution saving throw. If it fails, attacks against that creature are made with advantage, and the creature can't regain hit points through any means. An effected creature can end the effect by using an action to make a successful Constitution saving throw. A successful saving throw ends he effect on that creature and makes the creature immune to further castings of scale rot for 24 hours." + AtHigherLevels + "When you cast this spell using a spell slot of 5th level or higher, the number of affected targets increases by 1 per slot level above 4th."
 };
 SpellsList["shadow armor"] = {
@@ -1594,7 +1593,7 @@ SpellsList["shadow armor"] = {
 	range : "Self",
 	components : "V,S",
 	duration : "Instantaneous",
-	description : "As a reaction to being attacked you impose disadvantage on the attack and gain resistance to radiant damage",
+	description : "reaction vs being attacked; you impose disadvantage on the attack and gain resistance to radiant dmg",
 	descriptionFull : "You siphon energy from the Shadow Realm to protect yourself from an immediate threat. As a reaction, you pull shadows around yourself to distort reality. The attack against you is made with disadvantage, and you have resistance to radiant damage until the start of your next turn." 
 };
 SpellsList["shadow realm gateway"] = {
@@ -1607,7 +1606,7 @@ SpellsList["shadow realm gateway"] = {
 	components : "V,S,M",
 	compMaterial : "a piece of black chalk",
 	duration : "Conc, 1 min",
-	description : "You open a stable two-way portal to the Shadow Realm;lasts for 1 minute;only cast as a ritual",
+	description : "Open a stable two-way portal to the Shadow Realm;lasts for 1 minute; only cast as a ritual",
 	descriptionFull : "By drawing a circle of black chalk up to 15 feet in diameter and chanting for one minute, you open a portal directly into the Shadow Realm. The portal fills the chalk circle and appears as a vortex of inky blackness; nothing can be seen through it. Any object or creature that passes through the portal instantly arrives safely in the Shadow Realm. The portal remains open for one minute or until you lose concentration on it, and it can be used to travel between the Shadow Realm and the chalk circle, in both directions, as many times as desired during the spell's duration. This spell can only be cast as a ritual.", 
 	ritual : true, 
 };
