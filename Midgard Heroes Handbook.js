@@ -265,7 +265,7 @@ recovery : "long rest",
 usages : 1,
 action : ["action"],
 description : "\n   " + "At 20th level I gain the Child of the Storm feature (see Notes page below)",
-	toNotesPage : [{
+toNotesPage : [{
 name : "Child of the Storm",
 note : [
 	"As an action, I gain the following benefits for 1 hour or until I'm incapacitated:",
@@ -347,13 +347,10 @@ features : {
 name : "Disciple of the Draught",
 minlevel : 1,
 description : desc([
-	"I gain proficiency with either the Insight or Medicine skill (my choice).",
-	"I learn the Message cantrip", 
-	"I also gain proficiency with Brewer's supplies. Ability checks that I make with them use double my proficiency bonus." ]),
+	"I gain proficiency with either the Insight or Medicine skill (my choice), and I learn the Message cantrip. I also gain proficiency with Brewer's supplies, and Ability Checks that I make with them use double my proficiency bonus." ]),
 
 skillstxt : "\n\n" + toUni("Beer Domain") + ": Choose Insight or Medicine.",
 toolProfs : ["brewer's supplies"],
-
 spellcastingBonus : {
 name : "Disciple of the Draught",
 spells : ["message"],
@@ -374,11 +371,11 @@ description : desc([
 		},
 		
 "subclassfeature6" : {
-name : "Boot and Rally",
+name : "Channel Divinity: Boot and Rally",
 minlevel : 6,
 action : ["action"],
 description : desc([
-	"All friendly creatures within 30 feet of me who are Frightened, Paralyzed, Poisoned, or Stunned gain an immediate saving throw with advantage to remove the effect. Creatures that succeed on the saving throw also regain 2d6 hit points."]),			
+	"As an action I use my Channel Divinity, and all friendly creatures within 30 feet of me who are Frightened, Paralyzed, Poisoned, or Stunned gain an immediate saving throw with advantage to remove the effect. Creatures that succeed on the saving throw also regain 2d6 hit points."]),			
 		},
 "subclassfeature8" : {
 name : "Divine Strike",
@@ -423,7 +420,7 @@ name : "Channel Divinity: Feline Finesse",
 minlevel : 2,
 action : ["action"],
 description : desc([
-	"I can add a +10 bonus to any Dexterity ability or skill check made by me or someone I choose within 30 ft."	]),
+	"I can add a +10 bonus to any Dexterity ability or skill check made by me or someone I choose within 30 feet."	]),
 	},
 	
 "subclassfeature6" : {
@@ -484,13 +481,13 @@ description : desc([
 "subclassfeature6" : {
 name : "Clockwork Companion",
 minlevel : 6,
-action : ["action", "(Command)"],
+action : ["bonus action", "(Command)"],
 description : desc([
-	"I build or acquire a clockwork companion which functions in most ways as a ranger's companion.", 
-	"It adds my proficiency bonus to AC, attacks, damage, and save/skill proficiencies.",
-	"Its hit point maximum equals four times my cleric level.",
-	"It takes a turn on my initiative; It only takes the Dodge action unless I command it otherwise",
-	"As a bonus action, I can have it take the Attack, Dash, Disengage, or Help action on its turn.", ]),
+	"• I build or acquire a clockwork companion which functions in most ways as a ranger's companion.", 
+	"• It adds my proficiency bonus to AC, attacks, damage, and save/skill proficiencies.",
+	"• Its hit point maximum equals four times my cleric level.",
+	"• It takes a turn on my initiative; It only takes the Dodge action unless I command it otherwise",
+	"• As a bonus action, I can have it take the Attack, Dash, Disengage, or Help action on its turn.", ]),
 additional :  "up to CR 1/4th medium sized construct, or clockwork version of Tiny or Small beast CR 1/4th or lower",
 	},
 
@@ -530,7 +527,7 @@ description : desc([
        "I gain proficiency with either the Deception or Stealth skill, and I can Hide as a bonus action."
         ]),  
 skillstxt : "\n\n" + toUni("Creature of Darkness") + ": Choose one from Deception or Stealth",
-action : ["bonus action", "hide"]
+action : ["bonus action", "Hide"]
     
 },
 "subclassfeature2" : {
@@ -544,16 +541,16 @@ description : desc([
 	
 },
 "subclassfeature6" : {
-name : "Shadow Meld",
+name : "Channel Divinity: Shadow Meld",
 minlevel : 6,
 action : ["action"],
 description : desc([
   "As an action I summon a sphere of darkness with a 60-foot radius centered on me",
   "In the sphere, bright light becomes dim light, dim light becomes darkness, and darkness becomes equivalent to magical darkness. All creatures in the sphere other than me that at the end of their turn must make a Con save or take 1d8 cold damage. The sphere lasts for 1 minute or until I dismiss it as a bonus action. There’s a chance that creatures from the plane of shadow might step through into the world when the effect ends", 
   "See the \"Notes\" page for the Table."  ]),
-  },
-  
-Shadowmeldtable : "\u25C6 Shadow Meld Table (Midgard 59) [results 01-100]" + desc([
+toNotesPage : [{
+name : "Shadow Meld Table: Results 01-100",
+note : [
 "d100  Effect",
 "01-74 Nothing happens.",
 "75-80 2d4 shadows.",
@@ -561,8 +558,11 @@ Shadowmeldtable : "\u25C6 Shadow Meld Table (Midgard 59) [results 01-100]" + des
 "85-89 2 shadow beasts",
 "90-94 2 shadow fey enchantress",
 "95-98 2 elder shadow drakes",
-"99-100 1 young shadow dragon",
-	]),
+"99-100 1 young shadow dragon"],	
+page3notes : true,
+	}],
+		
+},	
 	
 "subclassfeature8" : {
 name : "Divine Strike",
