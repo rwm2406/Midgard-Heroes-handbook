@@ -546,8 +546,8 @@ minlevel : 6,
 action : ["action"],
 description : desc([
   "As an action I summon a sphere of darkness with a 60-foot radius centered on me",
-  "In the sphere, bright light becomes dim light, dim light becomes darkness, and darkness becomes equivalent to magical darkness. All creatures in the sphere other than me that at the end of their turn must make a Con save or take 1d8 cold damage. The sphere lasts for 1 minute or until I dismiss it as a bonus action. There’s a chance that creatures from the plane of shadow might step through into the world when the effect ends", 
-  "See the \"Notes\" page for the Table."  ]),
+  "In the sphere, bright light becomes dim light, dim light becomes darkness, and darkness becomes equivalent to magical darkness. All creatures in the sphere other than me that at the end of their turn must make a Con save or take 1d8 cold damage. The sphere lasts for 1 minute or until I dismiss it as a bonus action.",
+  "There’s a chance that creatures from the plane of shadow might step through into the world when the effect ends: See the \"Notes\" page for the Table."  ]),
 toNotesPage : [{
 name : "Shadow Meld Table: Results 01-100",
 note : [
@@ -595,10 +595,10 @@ features : {
 name : "Bonus Proficiency",
 minlevel : 1,
 description : desc([
-	"I gain proficiency with the Arcana skill and I double my proficiency bonus for ability checks made with the Arcana skill. I also have advantage on saves against being frightened." ]),
+	"I gain proficiency with the Arcana skill and I double my proficiency bonus for ability checks made with the Arcana skill. I also have advantage on saves against being Frightened." ]),
 skillstxt : "\n\n" + toUni("Dragon Domain (Bonus Proficiency)") + ": Arcana proficiency and expertise.",
 eval : "AddSkillProf('Arcana', true, true)",
-savetxt : { adv_vs : ["frightened"]}
+savetxt : { adv_vs : ["Frightened"]}
 	
 },
 "subclassfeature2" : {
@@ -606,7 +606,7 @@ name : "Channel Divinity: Charmer of Reptiles",
 minlevel : 2,
 action : ["action"],
 description : desc([
-	"As an action, all reptilian creatures within 30 feet that can see me must make a Wisdom save. If failed, they are charmed by me for 1 minute or until they take damage." ]),
+	"As an action, all reptilian creatures within 30 feet that can see me must make a Wisdom save. If failed, they are Charmed by me for 1 minute or until they take damage." ]),
         },
 "subclassfeature6" : {
 name : "Channel Divinity: Dragon's Resistance",
@@ -632,7 +632,7 @@ recovery : "short rest",
 usages : 1,
 action : ["action",],
 description : desc([
-	"I can use an action to Frighten hostile creatures in a 60 foot cone on a failed Wis save for 1 minute. Frightned creatures make can make additional saves at end of each turn. Once a creature has saved, they can not be affected again for 24 hours."]),
+	"As an action I can Frighten hostile creatures in a 60 foot originating from me on a failed Wis save for 1 minute. Frightned creatures make can make additional saves at end of their turns. Once a creature has saved, they can not be affected again by this ability for 24 hours."]),
 
 		}
 	}
@@ -664,18 +664,14 @@ selection : ["poison spray"]
 name : "Channel Divinity: Ferocious Feast",
 minlevel : 2,
 description : desc([
-	"I can use my Channel Divinity to gain a bite attack for 1 minute",
-	"The bite does 1d6+ my Str mod piercing damage",
-	"On a critical hit I also add my Wis mod to the total damage." 	]),
+	"I can use my Channel Divinity to gain a bite attack for 1 minute. The bite does 1d6+ my Str mod piercing damage. On a critical hit I also add my Wis mod to the total damage." 	]),
        	},
 
 "subclassfeature6" : {
 name : "Anthropophage",
 minlevel : 6,
 description : desc([
-	"As an action I can engage in a ritual of cannibalism and consume 1/2 lb of meat from a sentient humanoid's corpse",
-	"Doing so allows me remove the effects of diseases, poisons or the poisoned condition, or one level of exhaustion from myself",
-	"My dieity protects me from negative health consequences associated with cannibalism while doing so." ]),
+	"As an action I can engage in a ritual of cannibalism and consume 1/2 lb of meat from a sentient humanoid's corpse. Doing so allows me remove the effects of diseases, poisons or the poisoned condition, or one level of exhaustion from myself. My deity  protects me from negative health consequences associated with cannibalism while doing so." ]),
 action : ["action"]
 	},
 
@@ -693,8 +689,7 @@ description : desc([
 name : "Ravening Horde",
 minlevel : 17,
 description : desc([
-"As an action, all creatures within 60 feet of me  except those I choose must make a Charisma save",
-"If they fail, they take 10d8 necrotic damage, drop what they are holding and mindlessly attack with their hands, teeth, or natural weapons, anybody who was unaffected by this ability",
+"As an action, all creatures within 60 feet of me  except those I choose must make a Charisma save. If they fail, they take 10d8 necrotic damage, drop what they are holding and mindlessly attack with their hands, teeth, or natural weapons, anybody who was unaffected by this ability",
 "This effect lasts for (3 + my Wisdom modifier) rounds. Creatures repeat the saving throw at the end of their turns to end the effect on themselves",
 "This ability does not work on constructs or undead." 
 ]),
@@ -724,8 +719,7 @@ name : "Channel Divinity: Unseen",
 minlevel : 2,
 action : ["action", ""],
 description : desc([
-	"As an action I can use my channel divinity to gain advantage on Stealth ability checks to move quietly and hide. I also leave no scent.",
-	"This ability lasts for rounds equal to my cleric level + my Wisdom modifier.", ]),
+	"As an action I can use my Channel Divinity to gain advantage on Stealth ability checks to move quietly and hide. I also leave no scent. This ability lasts for a number of rounds equal to my cleric level + my Wisdom modifier.", ]),
 	},
 	
 "subclassfeature6" : {
@@ -736,11 +730,11 @@ description : desc([
 	"I choose a Favored Enemy as if I was a ranger, and gain all the same benefits as that feature.",
 	"I gain an additional Favored Enemy at 10th level, and 16th level." ]),
 additional :  levels.map(function (n) {
-					return n < 10 ? "1 favored enemy" : (n < 16 ? 1 : 2) + " favored enemies";
+					return n < 10 ? "1 favored enemy" : (n < 16 ? 2 : 3) + " favored enemies";
 				}),
 extraname : "Favored Enemy",
 extrachoices : ["Aberrations", "Beasts", "Celestials", "Constructs", "Dragons", "Elementals", "Fey", "Fiends", "Giants", "Monstrosities", "Oozes", "Plants", "Undead", "Two Races of Humanoids"],
-extraTimes : levels.map(function (n) { return n < 10 ? 1 : n < 16 ? 1 : 2; }),
+extraTimes : levels.map(function (n) { return n < 10 ? 1 : n < 16 ? 2 : 3; }),
 	"aberrations" : {
 		name : "Aberrations",
 		description : "",
@@ -828,7 +822,7 @@ name : "Hunting Quest",
 minlevel : 17,
 description : desc([
 	"I can begin a holy quest to slay a known quarry. If it is slain within 3 months I can create the following regional effect after a week of residence in a particular location.",
-	"Wisdom (Survival) checks made to procure food from hunting, locate fresh water, or to find campsites that are secure against predators are made with advantage within 3 miles of my home."]),
+	"• Wisdom (Survival) checks made to procure food from hunting, locate fresh water, or to find campsites that are secure against predators are made with advantage within 3 miles of my home."]),
 		}
 	}
 });
