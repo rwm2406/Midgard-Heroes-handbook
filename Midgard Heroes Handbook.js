@@ -1020,9 +1020,9 @@ languageProfs : [1]
 "subclassfeature2" : {
 name : "Channel Divinity",
 minlevel : 2,
-action : ["action", ""],
+action : ["action"],
 description : desc([
-	"As an action, I give myself and up to 5 other creatures advantage on skill or ability checks made to made to climb, avoid falling, or avoid the prone condition. The effect lasts for 1 hour."]),
+	"As an action, I give myself and up to 5 other creatures advantage on Skill or Ability Checks made to made to climb, avoid falling, or avoid the Prone condition. The effect lasts for 1 hour."]),
         },
         
 "subclassfeature6" : {
@@ -1045,10 +1045,9 @@ description : desc([
 "subclassfeature17" : {
 name : "Avalanche",
 minlevel : 17,
+action : ["action"],
 description : desc([
-	"As an action, I can create an Avalanche in a 60 foot cone originiating from a point I choose within 20 feet.",
-	"Each creature in the cone takes 15d8 bludgeoning damage or half with a successful Strength saving throw)",
-	" A creature that fails the saving throw is also restrained. A restrained creature can be freed by spending an action to make a successful Strength check, either by itself or by an ally within 5 feet of it."	]),
+	"As an action, I can create an Avalanche in a 60 foot cone originating from a point I choose within 20 feet. Each creature in the cone takes 15d8 bludgeoning damage (half with a successful Strength saving throw.  A creature that fails the saving throw is also restrained. A restrained creature can be freed by spending an action to make a successful Strength check, either by itself or by an ally within 5 feet of it."]),
 		},
 	},
 });	
@@ -1063,8 +1062,7 @@ features : {
 name : "Envoy to the Waves",
 minlevel : 1,
 description : desc([
-       "I learn the Chill Touch cantrip and the Aquan language.",
-       "I also gain proficiency in Survival, and with tridents and nets.", ]),  
+       "I learn the Chill Touch cantrip and the Aquan language. I also gain proficiency in Survival, and with tridents and nets.", ]),  
 skills : ["Survival"],
 weaponprofs : [false, false, ["trident", "net"]],
 languageProfs : ["Aquan"],
@@ -1077,16 +1075,19 @@ Selection : ["chill touch"]},
 "subclassfeature2" : {
 name : "Channel Divinity: Sea Speaker",
 minlevel : 2,
-action : ["action", ""],
+action : ["action"],
 description : desc([
 	"As an action I can use my Channel Divnity and can communicate telepathically with aquatic creatures within 100 feet. This ability lasts for 1 hour."]),
         },
         
 "subclassfeature6" : {
-	name : "At Home in the Waves",
-	minlevel : 6,
-	description : desc([ 
-		"I have a swim speed of 30 feet and darkvision 60 feet. If I already have darkvision, its range extends by 30 feet." ]),
+name : "At Home in the Waves",
+minlevel : 6,
+speed : {
+swim : { spd : 30, enc : 20 }, },
+vision : [["Darkvision", "fixed60"], ["Darkvision", "+30"]],
+description : desc([ 
+"I have a swim speed of 30 feet and darkvision 60 feet. If I already have darkvision, its range extends by 30 feet." ]),
         },
 
   "subclassfeature8" : {
