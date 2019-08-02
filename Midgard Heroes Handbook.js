@@ -1103,10 +1103,9 @@ description : desc([
 "subclassfeature17" : {
 name : "Scales of the Sea",
 minlevel : 17,
+action : ["action", "(Transform)"],
 description : desc([
-	"I have the ability to breathe freely underwater, and as an action, I can transform my skin into fish-like scales.",
-	"While covered in scales, have resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons, and I have advantage on Dexterity (Stealth) checks made in natural underwater environments.",
-	"The scales can be any color I choose, but they need to be kept wet; I gain one level of exhaustion at the end of each hour while transformed and they aren't thoroughly wetted with a quart or more of water at least once." ]),
+	"I have the ability to breathe freely underwater, and as an action, I can transform my skin into fish-like scales. While covered in scales, have resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons, and I have advantage on Dexterity (Stealth) checks made in natural underwater environments. The scales can be any color I choose, but they need to be kept wet; I gain one level of exhaustion at the end of each hour while transformed and they aren't thoroughly whetted with a quart or more of water at least once." ]),
 		},
 
 		},
@@ -1133,14 +1132,14 @@ name : "Channel Divinity: One Move Ahead",
 minlevel : 2,
 action : ["action", ""],
 description : desc([
-	"As an action I can use my Channel Divinity to add 20 feet to my ovement speed for a number of rounds equal to my cleric level."]),
+	"As an action I can use my Channel Divinity to add 20 feet to my movement speed for a number of rounds equal to my cleric level."]),
         },
         
 "subclassfeature6" : {
 name : "Channel Divinity: Future Sight",
 	minlevel : 6,
 	description : desc([ 
-		" I can use my Channel Divinity to declare an action or movement I just performed did not happen, allowing me to take a different action or make a different movement.",
+		"I can use my Channel Divinity to declare an action or movement I just performed did not happen, allowing me to take a different action or make a different movement.",
 		"I can do this after the result of the activity is known, so long as it didn't result in my unconsciousness or death. Only a single action or movement can be nullified.",
 		"I gain one level of exhaustion after using this ability." ]),
         },
@@ -1159,8 +1158,8 @@ description : desc([
 name : "It Was Foretold",
 minlevel : 17,
 description : desc([
-	"I have advantage on Dexterity saving throws, Wisdom (Perception) checks, and Wisdom (Insight) checks. I also have resistancee to fire, poison, and psychic damage.",
-	"With GM cooperation, I can issue a prophecy from my deity once per month. I should consult with your GM to find out what, if anything, your deity wants foretold."]),
+	"I have advantage on Dexterity saving throws, Wisdom (Perception) checks, and Wisdom (Insight) checks. I also have resistance to fire, poison, and psychic damage.",
+	"With GM cooperation, I can issue a prophecy from my deity once per month. I should consult with my GM to find out what, if anything, my deity wants foretold."]),
 dmgres : ["Fire", "Poison", "Psychic"],
 		
 		},
@@ -1188,7 +1187,7 @@ speed : { walk : {spd : "+5", enc : "+5" } },
 "subclassfeature2" : {
 name : "Channel Divinity: Burst of Speed",
 minlevel : 2,
-action : ["action", "Burst of Speed"],
+action : ["action"],
 description : desc([
 	"As an action I can use my Channel Divinity to grant a creature I touch +10 feet to their movement speed for a number of rounds equal to 3+ my Wisdom modifier.",
 	"They also gain the benefit of the bless spell, but only on attacks and saving throws that rely on Dexterity."]),
@@ -1196,10 +1195,12 @@ description : desc([
         
 "subclassfeature6" : {
 name : "Quickness of the Gods",
-	minlevel : 6,
-	description : desc([ 
-		"My base movement speed increases by another 5 feet. Also, as a reaction or a bonus action, I can increase my Dexterity score by 10 until the end of the current turn.",
-		"This bonus affects saving throws and ability checks, but not attacks."]),
+action : ["bonus action", "Quickness of the Gods"],
+action : ["reaction", "Quickness of the Gods"],
+minlevel : 6,
+description : desc([ 
+	"My base movement speed increases by another 5 feet. Also, as a reaction or a bonus action, I can increase my Dexterity score by 10 until the end of the current turn.",
+	"This bonus affects saving throws and ability checks, but not attacks."]),
 speed : { walk : {spd : "+5", enc : "+5" } },
 usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
 recovery : "long rest",
