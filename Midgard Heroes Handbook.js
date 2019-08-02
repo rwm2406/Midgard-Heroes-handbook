@@ -1229,25 +1229,18 @@ usages : 1
 		},
 	});
 AddSubClass("cleric", "travel domain", {
-regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(travel|voyage|journey)\b).*$/i,
+regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*\b(journey|voyage|travel)\b).*$/i,
 subname : "Travel Domain",
 spellcastingExtra : ["comprehend languages", "longstrider", "find steed", "pass without trace", "haste", "water walk", "dimension door","freedom of movement", "shadow realm gateway", "teleportation circle"],
 source : ["Midgard"],
 features : {
 
-"subclassfeature1.1" : {
+"subclassfeature1" : {
 name : "Born to the Road",
 minlevel : 1,
 description : desc([
-       "I gain proficiency in either Insight, Nature, or Survival.", ]),  
+       "I gain proficiency in either Insight, Nature, or Survival. I learn two common languages of my choice and gain proficiency with cartographer's tools", ]),  
 skillstxt : "\n\n" + toUni("Travel Domain (Born to the Road)") + ": Choose one from Insight, Nature, or Survival.",
-},
-
-"subclassfeature1.2" : {
-name : "Bonus Proficiency",
-minlevel : 1,
-description : desc([
-       "I learn two common languages of my choice and gain proficiency with cartographer's tools", ]),  
 toolProfs : ["Cartographer's tools"],
 languageProfs : [2]
 },
@@ -1255,7 +1248,7 @@ languageProfs : [2]
 "subclassfeature2" : {
 name : "Channel Divinity: Reinvigorate",
 minlevel : 2,
-action : ["action", "Reinvigorate"],
+action : ["action"],
 description : desc([
 	"As an action I can use my Channel Divinity to remove 1 level of exhaustion from myself or someone I touch."]),
         },
@@ -1264,7 +1257,7 @@ description : desc([
 name : "Trailblazer",
 	minlevel : 6,
 	description : desc([ 
-		"When traveling any distance longer than 5 days, if I have a map of the region, or know the area well, I can reduce the travel time by 30%"]),
+		"When traveling any distance longer than 5 days, if I have a map of the region, or know the area well, I can reduce the travel time by 30%."]),
       },
 
   "subclassfeature8" : {
@@ -1296,28 +1289,19 @@ spellcastingExtra : ["ray of sickness", "protection from the void", "destructive
 source : ["Midgard"],
 features : {
 
-"subclassfeature1.1" : {
+"subclassfeature1" : {
 name : "Messenger of the Void",
 minlevel : 1,
 description : desc([
-       "I gain proficiency in Arcana and Intimidation.", ]),  
-	skills : ["Arcana", "Intimidation"],
-
-},
-
-"subclassfeature1.2" : {
-name : "Bonus Proficiency",
-minlevel : 1,
-description : desc([
-       "I gain proficiency with navigator's tools", ]),  
-toolProfs : ["Navigator's tools"],
-
+       "I gain proficiency in Arcana and Intimidation, and with navigator's tools.", ]),  
+skills : ["Arcana", "Intimidation"],
+toolProfs : ["Navigator's tools"]
 },
 
 "subclassfeature2" : {
 name : "Channel Divinity: Hidden Knowledge",
 minlevel : 2,
-action : ["action", "Hidden Knowledge"],
+action : ["action"],
 description : desc([
 	"As an action I can use my Channel Divinity to gain advantage on Intelligence skill checks. In addition, I can choose to use my Wisdom modifier instead of Intelligence when making these checks. Both effects last for one hour."]),
         },
@@ -1325,10 +1309,10 @@ description : desc([
 "subclassfeature6" : {
 name : "Channel Divinity: Dark Secrets",
 minlevel : 2,
-action : ["action", "Dark Secrets"],
+action : ["action"],
 	minlevel : 6,
 	description : desc([ 
-		"As an action I can present my holy symbol and speak of the void. Up to three creatures I choose who can see and hear me must make successful Wisdom saving throws or be afflicted with temporary madness (selected randomly from the Short-Term Madness table). An affected creature repeats the saving throw at the end of its turn, ending the effect on itself with a successful save."]),
+		"As an action I can present my holy symbol and up to three creatures I choose who can see and hear me must make successful Wisdom saving throws or be afflicted with temporary madness (selected randomly from the Short-Term Madness table). An affected creature repeats the saving throw at the end of its turn, ending the effect on itself with a successful save."]),
       },
 
   "subclassfeature8" : {
