@@ -932,16 +932,10 @@ description : desc([
 "subclassfeature17" : {
 	name : " Channel Divinity: Banish to the Maze",
 	minlevel : 17,
-	action : ["action"],
+action : ["action", "(Start)"],
 	action : ["bonus action", "(Dismiss)"],
 	description : desc([
-	"As an action I can expend one use of Channel Divinity to force a creature to make a Wisdom Saving throw.",
-	"On a failure, the target is transported to an extra-dimensional labyrinth, similar to the Maze spell, for number of rounds equal to half my cleric level, unless I end it early by using a bonus action.",
-	"I can can choose to enter the maze with the target, but doing so expends two rounds of the labyrinth's total duration for every round we are both in the maze.",
-	"While in the maze as an action, I can find the target in the maze by winning an Intelligence contest against the target. Once found, the target can evade you in the same way (by winning an Intelligence contest).",
-	"I have advantage during these Intelligence contests, and I can leave the labyrinth at any time as an action, instantly returning to my previous location.",
-	"The target that was sent to the maze can also search for the exit. On its turn, it uses its action to make a DC 20 Intelligence check; if the check succeeds, the creature escapes from the labyrinth and returns to its previous location.",
-	"The labyrinth is dimly lit with ambient light." ]), 
+	"As an action I can expend one use of Channel Divinity to force a creature to make a Wisdom Saving throw.  On a failure, the target is transported to an extra-dimensional labyrinth, similar to the Maze spell, for number of rounds equal to half my cleric level, unless I end it early by using a bonus action. I can can choose to enter the maze with the target, but doing so expends two rounds of the labyrinth's total duration for every round we are both in the maze. While in the maze, as an Action, I can find the target in the maze by winning an Intelligence contest against the target. I have advantage during these Intelligence contests, and I can leave the labyrinth at any time as an Action, instantly returning to my previous location. The target that was sent to the maze can also search for the exit. On its turn, it uses its action to make a DC 20 Intelligence check; if the check succeeds, the creature escapes from the labyrinth and returns to its previous location. The labyrinth is dimly lit with ambient light." ]), 
 		
 		},
 	},
