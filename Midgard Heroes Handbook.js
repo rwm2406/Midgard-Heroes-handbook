@@ -847,8 +847,7 @@ name : "Channel Divinity: No Hiding Place",
 minlevel : 2,
 action : ["action", ""],
 description : desc([
-	"As an action, I can learn the general direction of creature that has commited a crime or injustice", 
-	"At 7th level, I also learn the distance in miles that creature is from me." ]),
+	"   As an action, I can learn the general direction of creature that has committed a crime or injustice. At 7th level, I also learn the distance in miles that creature is from me." ]),
         },
         
 "subclassfeature6" : {
@@ -875,7 +874,7 @@ minlevel : 17,
 action : ["action", ""],
 description : desc([
 	"As an action I can expend a use of Channel Divinity and invoke my deity's authority.",
-  "As long as my deity is openly worshipped in the land I am in, I gain advantage on all Wisdom and Charisma checks involving justice, judgment, and the law."]),
+  "As long as my deity is openly worshiped  in the land I am in, I gain advantage on all Wisdom and Charisma checks involving justice, judgment, and the law."]),
 		}
 	}
 });
@@ -891,8 +890,7 @@ features : {
 name : "First Passage",
 minlevel : 1,
 description : desc([
-       "I gain proficiency in the Survival skill",
-       "I learn the Abyssal and Rue-Thothka languages"
+       "I gain proficiency in the Survival skill, and I learn the Abyssal and Rue-Thothka languages"
         ]),  
 skills : ["Survival","Nature"],
  languageProfs : ["Abyssal", "Rue-Thothka"]
@@ -934,21 +932,17 @@ description : desc([
 "subclassfeature17" : {
 	name : " Channel Divinity: Banish to the Maze",
 	minlevel : 17,
-	description : "\n   " + "At 17th level I gain the Banish to the Maze ability (see notes below)",
-	toNotesPage : [{
-	name : "Channel Divinity: Banish to the Maze",
-	note : [
+	action : ["action"],
+	action : ["bonus action", "(Dismiss)"],
+	description : desc([
 	"As an action I can expend one use of Channel Divinity to force a creature to make a Wisdom Saving throw.",
-	"On a failure, the target is transported to an extra-dimensional labyrinth, similar to the maze spell, for number of rounds equal to half my cleric level, unless I end it early by using a bonus action.",
+	"On a failure, the target is transported to an extra-dimensional labyrinth, similar to the Maze spell, for number of rounds equal to half my cleric level, unless I end it early by using a bonus action.",
 	"I can can choose to enter the maze with the target, but doing so expends two rounds of the labyrinth's total duration for every round we are both in the maze.",
 	"While in the maze as an action, I can find the target in the maze by winning an Intelligence contest against the target. Once found, the target can evade you in the same way (by winning an Intelligence contest).",
 	"I have advantage during these Intelligence contests, and I can leave the labyrinth at any time as an action, instantly returning to my previous location.",
 	"The target that was sent to the maze can also search for the exit. On its turn, it uses its action to make a DC 20 Intelligence check; if the check succeeds, the creature escapes from the labyrinth and returns to its previous location.",
-	"The labyrinth is dimly lit with ambient light."
-	],
-	page3notes : true,
-	}],
-	
+	"The labyrinth is dimly lit with ambient light." ]), 
+		
 		},
 	},
 });
