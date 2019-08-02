@@ -314,7 +314,7 @@ minlevel : 6,
 description : desc([ 
 	"As an action, one creature within 60 ft that I can see must make a Wis save. If failed, for 1 minute I can cast a Zone of Truth spell, affecting only them, without expending a spell slot.",
 	"The target automatically fails their save for Zone of Truth."]),
-	action : ["action", ""]
+	action : ["action"]
 	},
 	
 "subclassfeature8" : {
@@ -378,8 +378,7 @@ name : "Boot and Rally",
 minlevel : 6,
 action : ["action"],
 description : desc([
-	"All friendly creatures within 30 feet of me who are Frightened, Paralyzed, Poisoned, or Stunned gain an immediate saving throw with advantage to remove the effect.",
-	"Creatures that succeed on the saving throw also heal 2d6 hit points."]),			
+	"All friendly creatures within 30 feet of me who are Frightened, Paralyzed, Poisoned, or Stunned gain an immediate saving throw with advantage to remove the effect. Creatures that succeed on the saving throw also regain 2d6 hit points."]),			
 		},
 "subclassfeature8" : {
 name : "Divine Strike",
@@ -411,8 +410,7 @@ features : {
 name : "A Claw in the Clowder",
 minlevel : 1,
 description : desc([
-	"I gain proficiency in Acrobatics and Stealth",
-	"I learn the True Strike cantrip" ]),
+	"I gain proficiency in Acrobatics and Stealth, and I learn the True Strike cantrip." ]),
 skills : ["Stealth", "Acrobatics"],	
 spellcastingBonus : {
 name : "A Claw in the Clowder",
@@ -432,8 +430,7 @@ description : desc([
 name : "Eyes of the Cat",
 minlevel : 6,
 description : desc([
-	"I gain darkvision out to 60 ft.",
-    	"If I already have darkvision the range increases to 90 ft."]),
+	"I gain darkvision out to 60 feet. If I already have darkvision the range increases to 90 feet."]),
 vision : [["Darkvision", "fixed60"], ["Darkvision", "+30"]]
 	},
 
@@ -451,7 +448,7 @@ name : "Emissary of the Cat",
 
 minlevel : 17,
 description : desc([
-	"At 17th level, I become a natural lycanthrope of the weretiger or werelion type, whichever is appropriate to my deity." ]),
+	"At 17th level, I become a natural lycanthrope of the weretiger or other were-feline type, whichever is appropriate to my deity." ]),
 		}
 	}
 });
@@ -463,49 +460,40 @@ spellcastingExtra : ["grease", "floating disk", "heat metal", "enlarge/reduce", 
 source : ["Midgard"],
 features : {
 					    
-"subclassfeature1" : {
+"subclassfeature1": {
 name : "Acolyte of Artifice",
 minlevel : 1,
 description : desc([
-	"I gain proficiency in either carpenter's tools, jeweler's tools, mason's tools, smith's tools, or weaver's tools.", 
-	"I also learn the Mage Hand cantrip",
-	"I can understand machine speech, but can't speak it." ]),
-toolProfs : ["Carpenter, Jewler, Mason or Smith's",  1],
+	"I gain proficiency in either carpenter's tools, jeweler's tools, mason's tools, smith's tools, or weaver's tools. I also learn the Mage Hand cantrip, and I can understand machine speech, but can't speak it. I also gain proficiency with heavy armor." ]),
+toolProfs : ["carpenter's tools, jewler's tools, mason's tools, or smith's tools",  1],
+armor : [false, false, true, false],
 spellcastingBonus : {
 name : "Acolyte of Artifice",
 spells : ["mage hand"],
 selection : ["mage hand"]
 		},
-},
-"subclassfeature1.1" : {
-name : "Bonus Proficiency",
-minlevel : 1,
-description : "\n   " + "I gain proficiency with heavy armor",
-armor : [false, false, true, false]
-		
        },
 "subclassfeature2" : {
 name : "Channel Divinity: Fade from False Eyes",
 minlevel : 2,
+action : ["action"],
 description : desc([
-	"As an action I can become invisible to constructs",
-	"Constructs who currently see me must make a Wisdom save, or lose track of me for 1 round per cleric level",
-	"This effect ends early if I attack or take a hostile action agaisnt any construct." 	]),
+	"As an action I can become invisible to constructs. Constructs who currently see me must make a Wisdom save, or lose track of me for 1 round per cleric level. This effect ends early if I attack, or take a hostile action against any construct." 	]),
     	
     	},
 "subclassfeature6" : {
 name : "Clockwork Companion",
 minlevel : 6,
+action : ["action", "(Command)"],
 description : desc([
-	" I build or acquire a clockwork companion which functions in most ways as a ranger's companion.", 
-	"It adds my proficiency bonus to AC, attacks, damage, and save/skill proficiencies",
+	"I build or acquire a clockwork companion which functions in most ways as a ranger's companion.", 
+	"It adds my proficiency bonus to AC, attacks, damage, and save/skill proficiencies.",
 	"Its hit point maximum equals four times my cleric level.",
 	"It takes a turn on my initiative; It only takes the Dodge action unless I command it otherwise",
-	"As a bonus action, I can have it take the Attack, Dash, Disengage, or Help action on its turn", ]),
+	"As a bonus action, I can have it take the Attack, Dash, Disengage, or Help action on its turn.", ]),
 additional :  "up to CR 1/4th medium sized construct, or clockwork version of Tiny or Small beast CR 1/4th or lower",
-action : ["action", " (Command)"]
-	
 	},
+
 "subclassfeature8" : {
 name : "Divine Strike",
 minlevel : 8,
@@ -520,8 +508,7 @@ description : desc([
 name : "Metal-Graced",
 minlevel : 17,
 description : desc([
-	"I have resistance to bludgeoning, piercing, and slashing damage from non-magical weapons",
-	"I also learn how to create gearforged"  ]),
+	"I have resistance to bludgeoning, piercing, and slashing damage from non-magical weapons. I also learn how to create gearforged"  ]),
 dmgres : [["Bludgeoning", "Bludg. (nonmagical)"], ["Piercing", "Pierc. (nonmagical)"], ["Slashing", "Slash. (nonmagical)"]]
 
 		}			
@@ -540,8 +527,7 @@ features : {
 name : "Creature of Darkness",
 minlevel : 1,
 description : desc([
-       "I gain proficiency with either the Deception or Stealth skill",
-       "I can Hide as a bonus action"
+       "I gain proficiency with either the Deception or Stealth skill, and I can Hide as a bonus action."
         ]),  
 skillstxt : "\n\n" + toUni("Creature of Darkness") + ": Choose one from Deception or Stealth",
 action : ["bonus action", "hide"]
@@ -553,8 +539,7 @@ minlevel : 2,
 action : ["action"],
 vision : ["Darkvision", "fixed60"],
 description : desc([
-    "As an action I gain darkvision out to 60 feet for 1 hour.",
-    "If I already have darkvision, I can also see through magical darkness as dim light up to 30 feet." 
+    "As an action I gain darkvision out to 60 feet for 1 hour. If I already have darkvision, I can also see through magical darkness as dim light up to 30 feet." 
 	]), 
 	
 },
@@ -564,11 +549,8 @@ minlevel : 6,
 action : ["action"],
 description : desc([
   "As an action I summon a sphere of darkness with a 60-foot radius centered on me",
-  "In the sphere, bright light becomes dim light, dim light becomes darkness, and darkness becomes equivalent to magical darkness",
-  "All creatures in the sphere other than me that at the end of their turn must make a Con save or take 1d8 cold damage",
-  "The sphere lasts for 1 minute or until you dismiss it as a bonus action",
-  "There’s a chance that creatures from the plane of shadow might step through into the world when the effect ends", 
-  "See the \"Notes\" page for the table."  ]),
+  "In the sphere, bright light becomes dim light, dim light becomes darkness, and darkness becomes equivalent to magical darkness. All creatures in the sphere other than me that at the end of their turn must make a Con save or take 1d8 cold damage. The sphere lasts for 1 minute or until I dismiss it as a bonus action. There’s a chance that creatures from the plane of shadow might step through into the world when the effect ends", 
+  "See the \"Notes\" page for the Table."  ]),
   },
   
 Shadowmeldtable : "\u25C6 Shadow Meld Table (Midgard 59) [results 01-100]" + desc([
@@ -596,8 +578,7 @@ atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpel
 name : "Shadow Shield",
 minlevel : 17,
 description : desc([
-	"Each time I am hit by a nonmagical attack or effect that causes damage, my shadow absorbs half of the damage",
-	"When my shadow has absorbed damage equal to one-fourth of my max HP, it vanishes until I finish a long rest."  ]),
+	"Each time I am hit by a nonmagical attack or effect that causes damage, my shadow absorbs half of the damage. When my shadow has absorbed damage equal to one-fourth of my max HP, it vanishes until I finish a long rest."  ]),
 		}			
 		
 	}
@@ -614,9 +595,7 @@ features : {
 name : "Bonus Proficiency",
 minlevel : 1,
 description : desc([
-	"I gain proficiency with the Arcana skill and I double my proficiency bonus for ability checks made with the Arcana skill",
-	"I also have advantage on saves against being frightened" ]),
-
+	"I gain proficiency with the Arcana skill and I double my proficiency bonus for ability checks made with the Arcana skill. I also have advantage on saves against being frightened." ]),
 skillstxt : "\n\n" + toUni("Dragon Domain (Bonus Proficiency)") + ": Arcana proficiency and expertise.",
 eval : "AddSkillProf('Arcana', true, true)",
 savetxt : { adv_vs : ["frightened"]}
@@ -625,23 +604,22 @@ savetxt : { adv_vs : ["frightened"]}
 "subclassfeature2" : {
 name : "Channel Divinity: Charmer of Reptiles",
 minlevel : 2,
-action : ["action", ""],
+action : ["action"],
 description : desc([
-	"As an action, all reptilian creatures within 30 feet that can see me must make a Wisdom save", 
-	"If failed, they are charmed by me for 1 minute or until they take damage." ]),
+	"As an action, all reptilian creatures within 30 feet that can see me must make a Wisdom save. If failed, they are charmed by me for 1 minute or until they take damage." ]),
         },
 "subclassfeature6" : {
 name : "Channel Divinity: Dragon's Resistance",
 minlevel : 6,
-action : ["reaction", ""],
+action : ["reaction"],
 description : desc([ 
-	"If I fail a saving throw, I can expend a use of Channel Divinity and choose to succeed instead" ]),
+	"If I fail a saving throw, I can expend a use of Channel Divinity as a reaction and choose to succeed instead." ]),
 	},
 "subclassfeature8" : {
 name : "Divine Strike",
 minlevel : 8,
 description : desc([
-	"Once per turn, when I hit a creature with a weapon attack, I do extra fire damage", ]),
+	"Once per turn, when I hit a creature with a weapon attack, I do extra fire damage.", ]),
 	additional : levels.map(function (n) {if (n < 8) return ""; return "+" + (n < 14 ? 1 : 2) + "d8 fire damage";}),
 	calcChanges : {
 	atkAdd : ["if (classes.known.cleric && classes.known.cleric.level > 7 && !isSpell) {fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 fire damage'; }; ", "Once per turn, I can have one of my weapon attacks that hit do extra fire damage."]}
@@ -649,15 +627,13 @@ description : desc([
 	
 "subclassfeature17" : {
 name : "Frightful Presence",
-
 minlevel : 17,
-description : desc([
-	"I can use an action to Frighten hostile creatures in a 60 foot cone on a failed Wis save for 1 minute",
-    "Frightned creatures make can make additional saves at end of each turn",
-	"Once a creature has saved, they can not be affected again for 24 hours."]),
 recovery : "short rest",
 usages : 1,
-action : ["action", ""] 
+action : ["action",],
+description : desc([
+	"I can use an action to Frighten hostile creatures in a 60 foot cone on a failed Wis save for 1 minute. Frightned creatures make can make additional saves at end of each turn. Once a creature has saved, they can not be affected again for 24 hours."]),
+
 		}
 	}
 });
@@ -669,30 +645,20 @@ spellcastingExtra : ["goodberry", "ray of sickness", "locate animals or plants",
 source : ["Midgard"],
 features : {
 					    
-"subclassfeature1.1" : {
+"subclassfeature1" : {
 name : "Unsated",
 minlevel : 1,
 description : desc([
-	"I gain proficiency with Cook's utensils.", 
-	"I learn the Poison Spray cantrip",
-	"I also gain proficiency in the Survival skill."
-	]),
-toolProfs : ["Cook's utensils"],
+	"I learn the Poison Spray cantrip. I gain proficiency in the Survival skill and also with Cook's utensils. Finally I gain proficiency with heavy armor."]),
+armor : [false, false, true, false],
+toolProfs : ["cook's utensils"],
 skills : ["Survival"],
 spellcastingBonus : {
-name : "Bonus Cantrip (Poison Spray)",
+name : "Unsated",
 spells : ["poison spray"],
-Selection : ["poison spray"]
-	},
+selection : ["poison spray"]
+		},
 },
-
-"subclassfeature1.2" : {
-name : "Bonus Proficiency",
-
-minlevel : 1,
-description : "\n   " + "I gain proficiency with heavy armor",
-armor : [false, false, true, false]
-		       },
 
 "subclassfeature2" : {
 name : "Channel Divinity: Ferocious Feast",
