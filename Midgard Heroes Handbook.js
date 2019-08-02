@@ -147,8 +147,9 @@ description : desc([
 	}
 });
 AddSubClass("paladin", "oath of radiance", {
-regExpSearch : /^(?=.*(knight|fighter|warrior|warlor))(?=.*\b(radiant|radiance|light)\b).*$/i,
+regExpSearch : /(radiance)/i,
 subname : "Oath of Radiance",
+fullname : "Paladin (Oath of Radiance)",
 spellcastingExtra : ["guiding bolt", "protection from evil and good", "magic weapon", "scorching ray", "beacon of hope", "daylight", "aura of life", "fire shield", "banishing smite", "greater restoration"],
 source : ["Midgard"],
 features : {
