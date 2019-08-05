@@ -147,7 +147,7 @@ description : desc([
 	}
 });
 AddSubClass("paladin", "oath of radiance", {
-regExpSearch : /^(?=.*(knight|fighter|warrior|warlor))(?=.*\b(radiant|radiance|light)\b).*$/i,
+regExpSearch : /^(?=.*(radiant|radiance|light))((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper)))).*$/i,
 subname : "Oath of Radiance",
 spellcastingExtra : ["guiding bolt", "protection from evil and good", "magic weapon", "scorching ray", "beacon of hope", "daylight", "aura of life", "fire shield", "banishing smite", "greater restoration"],
 source : ["Midgard"],
@@ -209,9 +209,8 @@ description : "\n   " + "At 20th level I gain the Radiant Champion feature (see 
 });
 
 AddSubClass("paladin", "oath of thunder", {
-regExpSearch : /(thunder)/i,
+regExpSearch : /^(?=.*(thunder|lightning|electricity))((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper)))).*$/i,
 subname : "Oath of Thunder",
-fullname : "Paladin (Oath of Thunder)",
 spellcastingExtra : ["heroism", "thunderwave", "find steed", "gust of wind", "call lightning", "elemental weapon", "freedom of movement", "stoneskin", "conjure volley", "swift quiver"],
 source : ["Midgard"],
 features : {
