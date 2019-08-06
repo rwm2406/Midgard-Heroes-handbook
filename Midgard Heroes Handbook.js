@@ -1625,6 +1625,7 @@ RaceList["grizzlehide bearfolk"] = {
 	regExpSearch : /^(?=.*(bearfolk|anthromorph))(?=.*\grizzlehide?\b).*$/i,
 	name : "Grizzlehide Bearfolk",
 	plural : "Grizzlehide Bearfolk",
+	sortname : "Bearfolk, Grizzlehide",
 	size : 3,
 	speed : {
 	walk : { spd : 30, enc : 20 }},
@@ -1642,38 +1643,33 @@ RaceList["grizzlehide bearfolk"] = {
 	removeeval : "tDoc.getField('Carrying Capacity Multiplier').value /= 2;",
 	
 	features : {
-		" bite" : {
-			name : "Bite",
-			minlevel : 1,
-			action : ["action"],
+" bite" : {
+	name : "Bite",
+	minlevel : 1,
+	action : ["action"],ability : 1,
+	damage : [1, 6, "piercing"],
+	range : "Melee",
+	abilitytodamage : true
 		},
-		" bear hug" : {
-			name : "Bear hug",
-			minlevel : 1,
-			usages : "Constitution modifier per ",
-			usagescalc : "event.value = Math.max(1, What('Con Mod'));",
-			recovery : "long rest",
-			action : ["bonus action"]
+
+" bear hug" : {
+name : "Bear hug",
+minlevel : 1,
+usages : "Constitution modifier per ",
+usagescalc : "event.value = Math.max(1, What('Con Mod'));",
+recovery : "long rest",
+action : ["bonus action"]
 			},
 			
 	}
 };
 
-WeaponsList["bite"] = {
-	regExpSearch : /^(?=.* bearfolk)(?=.*bite).*$/i,
-	name : " Bite",
-	ability : 1,
-	type : "Natural",
-	damage : [1, 6, "piercing"],
-	range : "Melee",
-	description : "Natural",
-	abilitytodamage : true
-};
 
 RaceList["purifier bearfolk"] = {
 	regExpSearch : /^(?=.*(bearfolk|anthromorph))(?=.*\purifier?\b).*$/i,
 	name : "Purifier Bearfolk",
 	plural : "Purifier Bearfolk",
+	sortname : "Bearfolk,Purifier",
 	size : 3,
 	speed : {
 	walk : { spd : 30, enc : 20 }},
@@ -1693,21 +1689,23 @@ RaceList["purifier bearfolk"] = {
 		"class" : "druid",
 		level : [0, 0],
 		atwill : true,
-	spellcastingAbility : 5,
-	},
-	
+	spellcastingAbility : 5,},
 	features : {
-		" bite" : {
-			name : "Bite",
-			minlevel : 1,
-			action : ["action"],
+	
+" bite" : {
+name : "Bite",
+minlevel : 1,
+action : ["action"],ability : 1,
+damage : [1, 6, "piercing"],
+range : "Melee",
+abilitytodamage : true,
 				},
 				
-			" stalwart will" : {
-			name : "Stalwart Will",
-			minlevel : 1,
-			usages : "1 ",
-			recovery : "short rest",
+" stalwart will" : {
+name : "Stalwart Will",
+minlevel : 1,
+usages : "1 ",
+recovery : "short rest",
 
 		},
 			
