@@ -1619,7 +1619,97 @@ SpellsList["void strike"] = {
 	duration : "Conc, 1 min",
 	description : "Spell attack, 5d8+1d8/SL Necrotic dmg and Frightens; 1 a, if consecutive, for dmg again; ends if out of range",
 	descriptionFull : "With a short phrase of void speech, you gather writhing darkness around your hand. When you cast the spell, and as an action on subsequent turns, you can unleash a bolt of darkness at a target within range.Make a ranged spell atack. If your target is in dim light or darkness, you have advantage on the roll. On a hit, the target takes 5d8 necrotic damage and is frightened of you until the start of your next turn " + AtHigherLevels + "When you cast the spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd."
+};
 
+RaceList["grizzlehide bearfolk"] = {
+	regExpSearch : /^(?=.*(bearfolk|anthromorph))(?=.*\grizzlehide?\b).*$/i,
+	name : "Grizzlehide Bearfolk",
+	plural : "Grizzlehide Bearfolk",
+	size : 3,
+	speed : {
+	walk : { spd : 30, enc : 20 }},
+	languageProfs : ["Common", "Northern"],
+	addarmor : "Natural Armor",
+	weapons : ["Bite"],
+	dmgres : ["cold"],
+	age : " come of age in their late teens and live around 80 years",
+	height : " range from 5'11 to over 7 feet tall (5'8\" + 3d8\")",
+	weight : " weigh around 160 lb (160 + 3d8 \xD7 lb)",
+	improvements : "Grizzlehide Bearfolk: +2 Strength and +1  Constitution;",
+	scores : [2, 0, 1, 0, 0, 0],	
+	trait : "Grizzlehide Bearfolk (+2 Strength, +1 Consitution)\n\nPowerful Build: I count as one size larger when determining my carrying capacity and the weight I can push, drag, or lift.\n\nNatural Armor: I have an AC of 13 + Dexterity modifier + shield.\n\nUrsine Talent: I am proficient  in the Athletics and Perception skills.\n\nBite: I can use my powerful jaws to make unarmed strikes dealing 1d6+ Str piercing damage.\n\nBear Hug: WhenI  take the Attack action, I can make an unarmed strike as a bonus action. If I  hit I  can grapple the target in addition to dealing damage.\n\nThick Coat: I am resistant to cold damage. ",
+	eval : "tDoc.getField('Carrying Capacity Multiplier').value *= 2;",
+	removeeval : "tDoc.getField('Carrying Capacity Multiplier').value /= 2;",
+	
+	features : {
+		" bite" : {
+			name : "Bite",
+			minlevel : 1,
+			action : ["action"],
+		},
+		" bear hug" : {
+			name : "Bear hug",
+			minlevel : 1,
+			usages : "Constitution modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Con Mod'));",
+			recovery : "long rest",
+			action : ["bonus action"]
+			},
+			
+	}
+};
 
+WeaponsList["bite"] = {
+	regExpSearch : /^(?=.* bearfolk)(?=.*bite).*$/i,
+	name : " Bite",
+	ability : 1,
+	type : "Natural",
+	damage : [1, 6, "piercing"],
+	range : "Melee",
+	description : "Natural",
+	abilitytodamage : true
+};
 
+RaceList["purifier bearfolk"] = {
+	regExpSearch : /^(?=.*(bearfolk|anthromorph))(?=.*\purifier?\b).*$/i,
+	name : "Purifier Bearfolk",
+	plural : "Purifier Bearfolk",
+	size : 3,
+	speed : {
+	walk : { spd : 30, enc : 20 }},
+	languageProfs : ["Common", "Umbral"],
+	addarmor : "Natural Armor",
+	weapons : ["Bite"],
+	age : " come of age in their late teens and live around 80 years",
+	height : " range from 5'11 to over 7 feet tall (5'8\" + 3d8\")",
+	weight : " weigh around 160 lb (160 + 3d8 \xD7 lb)",
+	improvements : "Grizzlehide Bearfolk: +2 Strength and +1 Wisdom;",
+	scores : [2, 0, 0, 0, 1, 0],	
+	trait : "Purifier Bearfolk (+2 Strength, +1 Wisdom)\n\nPowerful Build: I count as one size larger when determining my carrying capacity and the weight I can push, drag, or lift.\n\nNatural Armor: I have an AC of 13 + Dexterity modifier + shield.\n\nUrsine Talent: I am proficient in the Athletics and Perception skills.\n\nBite: I can use my powerful jaws to make unarmed strikes dealing 1d6+ Str piercing damage.\n\nNature's Gift:I learn a druid cantip of my choice. Wisdom is my spellcasting modifier for this cantrip. \n\Stalwart Will: Once per short rest when I  make an Intelligence, Wisdom, or Charisma saving throw, I can add 1d4 to the total. I can do this after the roll but before any effects occur. ",
+	eval : "tDoc.getField('Carrying Capacity Multiplier').value *= 2;",
+	removeeval : "tDoc.getField('Carrying Capacity Multiplier').value /= 2;",
+	spellcastingBonus : {
+		name : "Nature's Gift",
+		"class" : "druid",
+		level : [0, 0],
+		atwill : true,
+	spellcastingAbility : 5,
+	},
+	
+	features : {
+		" bite" : {
+			name : "Bite",
+			minlevel : 1,
+			action : ["action"],
+				},
+				
+			" stalwart will" : {
+			name : "Stalwart Will",
+			minlevel : 1,
+			usages : "1 ",
+			recovery : "short rest",
+
+		},
+			
+	}
 };
